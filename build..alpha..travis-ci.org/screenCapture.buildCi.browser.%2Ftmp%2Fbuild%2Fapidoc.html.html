@@ -1,0 +1,5680 @@
+<html><head></head><body><div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a href="http://github.com/squaremo/rabbit.js">rabbit.js (v0.4.4)</a>
+</h1>
+<h4>Easy stream-based messaging using RabbitMQ</h4>
+<div class="apidocSectionDiv"><a href="#apidoc.tableOfContents" id="apidoc.tableOfContents"><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.rabbit.js">module rabbit.js</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rabbit.js.Context">
+            function <span class="apidocSignatureSpan">rabbit.js.</span>Context
+            <span class="apidocSignatureSpan">(url, connOpts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rabbit.js.PUB">
+            function <span class="apidocSignatureSpan">rabbit.js.</span>PUB
+            <span class="apidocSignatureSpan">(channel, opts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rabbit.js.PUBLISH">
+            function <span class="apidocSignatureSpan">rabbit.js.</span>PUBLISH
+            <span class="apidocSignatureSpan">(channel, opts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rabbit.js.PULL">
+            function <span class="apidocSignatureSpan">rabbit.js.</span>PULL
+            <span class="apidocSignatureSpan">(channel, opts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rabbit.js.PUSH">
+            function <span class="apidocSignatureSpan">rabbit.js.</span>PUSH
+            <span class="apidocSignatureSpan">(channel, opts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rabbit.js.REP">
+            function <span class="apidocSignatureSpan">rabbit.js.</span>REP
+            <span class="apidocSignatureSpan">(channel, opts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rabbit.js.REPLY">
+            function <span class="apidocSignatureSpan">rabbit.js.</span>REPLY
+            <span class="apidocSignatureSpan">(channel, opts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rabbit.js.REQ">
+            function <span class="apidocSignatureSpan">rabbit.js.</span>REQ
+            <span class="apidocSignatureSpan">(channel, opts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rabbit.js.REQUEST">
+            function <span class="apidocSignatureSpan">rabbit.js.</span>REQUEST
+            <span class="apidocSignatureSpan">(channel, opts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rabbit.js.SUB">
+            function <span class="apidocSignatureSpan">rabbit.js.</span>SUB
+            <span class="apidocSignatureSpan">(channel, opts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rabbit.js.SUBSCRIBE">
+            function <span class="apidocSignatureSpan">rabbit.js.</span>SUBSCRIBE
+            <span class="apidocSignatureSpan">(channel, opts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rabbit.js.TASK">
+            function <span class="apidocSignatureSpan">rabbit.js.</span>TASK
+            <span class="apidocSignatureSpan">(channel, opts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rabbit.js.WORKER">
+            function <span class="apidocSignatureSpan">rabbit.js.</span>WORKER
+            <span class="apidocSignatureSpan">(channel, opts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rabbit.js.createContext">
+            function <span class="apidocSignatureSpan">rabbit.js.</span>createContext
+            <span class="apidocSignatureSpan">(url, connOpts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rabbit.js.js.Context">
+            function <span class="apidocSignatureSpan">rabbit.js.</span>js.Context
+            <span class="apidocSignatureSpan">(url, connOpts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rabbit.js.js.Context.prototype.close">
+            function <span class="apidocSignatureSpan">rabbit.js.</span>js.Context.prototype.close
+            <span class="apidocSignatureSpan">(callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rabbit.js.js.Context.prototype.socket">
+            function <span class="apidocSignatureSpan">rabbit.js.</span>js.Context.prototype.socket
+            <span class="apidocSignatureSpan">(type, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rabbit.js.js.PUB">
+            function <span class="apidocSignatureSpan">rabbit.js.</span>js.PUB
+            <span class="apidocSignatureSpan">(channel, opts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rabbit.js.js.PUB.prototype.close">
+            function <span class="apidocSignatureSpan">rabbit.js.</span>js.PUB.prototype.close
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rabbit.js.js.PUB.prototype.connect">
+            function <span class="apidocSignatureSpan">rabbit.js.</span>js.PUB.prototype.connect
+            <span class="apidocSignatureSpan">(destination, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rabbit.js.js.PUB.prototype.end">
+            function <span class="apidocSignatureSpan">rabbit.js.</span>js.PUB.prototype.end
+            <span class="apidocSignatureSpan">(chunk, encoding)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rabbit.js.js.PUB.prototype.publish">
+            function <span class="apidocSignatureSpan">rabbit.js.</span>js.PUB.prototype.publish
+            <span class="apidocSignatureSpan">(topic, chunk, encoding)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rabbit.js.js.PUB.prototype.setsockopt">
+            function <span class="apidocSignatureSpan">rabbit.js.</span>js.PUB.prototype.setsockopt
+            <span class="apidocSignatureSpan">(opt, value)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rabbit.js.js.PUB.prototype.write">
+            function <span class="apidocSignatureSpan">rabbit.js.</span>js.PUB.prototype.write
+            <span class="apidocSignatureSpan">(chunk, encoding)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rabbit.js.js.PULL">
+            function <span class="apidocSignatureSpan">rabbit.js.</span>js.PULL
+            <span class="apidocSignatureSpan">(channel, opts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rabbit.js.js.PULL.prototype._read">
+            function <span class="apidocSignatureSpan">rabbit.js.</span>js.PULL.prototype._read
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rabbit.js.js.PULL.prototype.connect">
+            function <span class="apidocSignatureSpan">rabbit.js.</span>js.PULL.prototype.connect
+            <span class="apidocSignatureSpan">(source, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rabbit.js.js.PUSH">
+            function <span class="apidocSignatureSpan">rabbit.js.</span>js.PUSH
+            <span class="apidocSignatureSpan">(channel, opts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rabbit.js.js.PUSH.prototype.connect">
+            function <span class="apidocSignatureSpan">rabbit.js.</span>js.PUSH.prototype.connect
+            <span class="apidocSignatureSpan">(destination, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rabbit.js.js.PUSH.prototype.write">
+            function <span class="apidocSignatureSpan">rabbit.js.</span>js.PUSH.prototype.write
+            <span class="apidocSignatureSpan">(chunk, encoding)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rabbit.js.js.REP">
+            function <span class="apidocSignatureSpan">rabbit.js.</span>js.REP
+            <span class="apidocSignatureSpan">(channel, opts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rabbit.js.js.REP.prototype.connect">
+            function <span class="apidocSignatureSpan">rabbit.js.</span>js.REP.prototype.connect
+            <span class="apidocSignatureSpan">(source, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rabbit.js.js.REP.prototype.discard">
+            function <span class="apidocSignatureSpan">rabbit.js.</span>js.REP.prototype.discard
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rabbit.js.js.REP.prototype.requeue">
+            function <span class="apidocSignatureSpan">rabbit.js.</span>js.REP.prototype.requeue
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rabbit.js.js.REP.prototype.write">
+            function <span class="apidocSignatureSpan">rabbit.js.</span>js.REP.prototype.write
+            <span class="apidocSignatureSpan">(chunk, encoding)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rabbit.js.js.REQ">
+            function <span class="apidocSignatureSpan">rabbit.js.</span>js.REQ
+            <span class="apidocSignatureSpan">(channel, opts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rabbit.js.js.REQ.prototype.connect">
+            function <span class="apidocSignatureSpan">rabbit.js.</span>js.REQ.prototype.connect
+            <span class="apidocSignatureSpan">(destination, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rabbit.js.js.REQ.prototype.handleReply">
+            function <span class="apidocSignatureSpan">rabbit.js.</span>js.REQ.prototype.handleReply
+            <span class="apidocSignatureSpan">(msg)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rabbit.js.js.REQ.prototype.write">
+            function <span class="apidocSignatureSpan">rabbit.js.</span>js.REQ.prototype.write
+            <span class="apidocSignatureSpan">(chunk, encoding)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rabbit.js.js.SUB">
+            function <span class="apidocSignatureSpan">rabbit.js.</span>js.SUB
+            <span class="apidocSignatureSpan">(channel, opts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rabbit.js.js.SUB.prototype.connect">
+            function <span class="apidocSignatureSpan">rabbit.js.</span>js.SUB.prototype.connect
+            <span class="apidocSignatureSpan">(source, topic, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rabbit.js.js.TASK">
+            function <span class="apidocSignatureSpan">rabbit.js.</span>js.TASK
+            <span class="apidocSignatureSpan">(channel, opts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rabbit.js.js.TASK.prototype.connect">
+            function <span class="apidocSignatureSpan">rabbit.js.</span>js.TASK.prototype.connect
+            <span class="apidocSignatureSpan">(destination, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rabbit.js.js.TASK.prototype.post">
+            function <span class="apidocSignatureSpan">rabbit.js.</span>js.TASK.prototype.post
+            <span class="apidocSignatureSpan">(task, chunk, encoding)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rabbit.js.js.TASK.prototype.write">
+            function <span class="apidocSignatureSpan">rabbit.js.</span>js.TASK.prototype.write
+            <span class="apidocSignatureSpan">(chunk, encoding)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rabbit.js.js.WORKER">
+            function <span class="apidocSignatureSpan">rabbit.js.</span>js.WORKER
+            <span class="apidocSignatureSpan">(channel, opts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rabbit.js.js.WORKER.prototype.ack">
+            function <span class="apidocSignatureSpan">rabbit.js.</span>js.WORKER.prototype.ack
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rabbit.js.js.WORKER.prototype.connect">
+            function <span class="apidocSignatureSpan">rabbit.js.</span>js.WORKER.prototype.connect
+            <span class="apidocSignatureSpan">(source, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rabbit.js.js.WORKER.prototype.discard">
+            function <span class="apidocSignatureSpan">rabbit.js.</span>js.WORKER.prototype.discard
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rabbit.js.js.WORKER.prototype.requeue">
+            function <span class="apidocSignatureSpan">rabbit.js.</span>js.WORKER.prototype.requeue
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rabbit.js.js.createContext">
+            function <span class="apidocSignatureSpan">rabbit.js.</span>js.createContext
+            <span class="apidocSignatureSpan">(url, connOpts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">rabbit.js.</span>js.Context.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">rabbit.js.</span>js.PUB.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">rabbit.js.</span>js.PULL.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">rabbit.js.</span>js.PUSH.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">rabbit.js.</span>js.REP.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">rabbit.js.</span>js.REQ.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">rabbit.js.</span>js.SUB.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">rabbit.js.</span>js.TASK.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">rabbit.js.</span>js.WORKER.prototype</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.rabbit.js.Context">module rabbit.js.Context</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rabbit.js.Context.Context">
+            function <span class="apidocSignatureSpan">rabbit.js.</span>Context
+            <span class="apidocSignatureSpan">(url, connOpts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rabbit.js.Context.super_">
+            function <span class="apidocSignatureSpan">rabbit.js.Context.</span>super_
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.rabbit.js.Context.prototype">module rabbit.js.Context.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rabbit.js.Context.prototype.close">
+            function <span class="apidocSignatureSpan">rabbit.js.Context.prototype.</span>close
+            <span class="apidocSignatureSpan">(callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rabbit.js.Context.prototype.socket">
+            function <span class="apidocSignatureSpan">rabbit.js.Context.prototype.</span>socket
+            <span class="apidocSignatureSpan">(type, options)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.rabbit.js.Context.prototype.close">module rabbit.js.Context.prototype.close</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rabbit.js.Context.prototype.close.close">
+            function <span class="apidocSignatureSpan">rabbit.js.Context.prototype.</span>close
+            <span class="apidocSignatureSpan">(callback)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.rabbit.js.Context.prototype.socket">module rabbit.js.Context.prototype.socket</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rabbit.js.Context.prototype.socket.socket">
+            function <span class="apidocSignatureSpan">rabbit.js.Context.prototype.</span>socket
+            <span class="apidocSignatureSpan">(type, options)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.rabbit.js.PUB">module rabbit.js.PUB</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rabbit.js.PUB.PUB">
+            function <span class="apidocSignatureSpan">rabbit.js.</span>PUB
+            <span class="apidocSignatureSpan">(channel, opts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rabbit.js.PUB.super_">
+            function <span class="apidocSignatureSpan">rabbit.js.PUB.</span>super_
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.rabbit.js.PUB.prototype">module rabbit.js.PUB.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rabbit.js.PUB.prototype.close">
+            function <span class="apidocSignatureSpan">rabbit.js.PUB.prototype.</span>close
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rabbit.js.PUB.prototype.connect">
+            function <span class="apidocSignatureSpan">rabbit.js.PUB.prototype.</span>connect
+            <span class="apidocSignatureSpan">(destination, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rabbit.js.PUB.prototype.end">
+            function <span class="apidocSignatureSpan">rabbit.js.PUB.prototype.</span>end
+            <span class="apidocSignatureSpan">(chunk, encoding)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rabbit.js.PUB.prototype.publish">
+            function <span class="apidocSignatureSpan">rabbit.js.PUB.prototype.</span>publish
+            <span class="apidocSignatureSpan">(topic, chunk, encoding)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rabbit.js.PUB.prototype.setsockopt">
+            function <span class="apidocSignatureSpan">rabbit.js.PUB.prototype.</span>setsockopt
+            <span class="apidocSignatureSpan">(opt, value)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rabbit.js.PUB.prototype.write">
+            function <span class="apidocSignatureSpan">rabbit.js.PUB.prototype.</span>write
+            <span class="apidocSignatureSpan">(chunk, encoding)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.rabbit.js.PUB.prototype.close">module rabbit.js.PUB.prototype.close</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rabbit.js.PUB.prototype.close.close">
+            function <span class="apidocSignatureSpan">rabbit.js.PUB.prototype.</span>close
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.rabbit.js.PUB.prototype.connect">module rabbit.js.PUB.prototype.connect</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rabbit.js.PUB.prototype.connect.connect">
+            function <span class="apidocSignatureSpan">rabbit.js.PUB.prototype.</span>connect
+            <span class="apidocSignatureSpan">(destination, callback)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.rabbit.js.PUB.prototype.end">module rabbit.js.PUB.prototype.end</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rabbit.js.PUB.prototype.end.end">
+            function <span class="apidocSignatureSpan">rabbit.js.PUB.prototype.</span>end
+            <span class="apidocSignatureSpan">(chunk, encoding)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.rabbit.js.PUB.prototype.publish">module rabbit.js.PUB.prototype.publish</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rabbit.js.PUB.prototype.publish.publish">
+            function <span class="apidocSignatureSpan">rabbit.js.PUB.prototype.</span>publish
+            <span class="apidocSignatureSpan">(topic, chunk, encoding)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.rabbit.js.PUB.prototype.setsockopt">module rabbit.js.PUB.prototype.setsockopt</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rabbit.js.PUB.prototype.setsockopt.setsockopt">
+            function <span class="apidocSignatureSpan">rabbit.js.PUB.prototype.</span>setsockopt
+            <span class="apidocSignatureSpan">(opt, value)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.rabbit.js.PUB.prototype.write">module rabbit.js.PUB.prototype.write</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rabbit.js.PUB.prototype.write.write">
+            function <span class="apidocSignatureSpan">rabbit.js.PUB.prototype.</span>write
+            <span class="apidocSignatureSpan">(chunk, encoding)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.rabbit.js.PULL">module rabbit.js.PULL</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rabbit.js.PULL.PULL">
+            function <span class="apidocSignatureSpan">rabbit.js.</span>PULL
+            <span class="apidocSignatureSpan">(channel, opts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rabbit.js.PULL.super_">
+            function <span class="apidocSignatureSpan">rabbit.js.PULL.</span>super_
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.rabbit.js.PULL.prototype">module rabbit.js.PULL.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rabbit.js.PULL.prototype._read">
+            function <span class="apidocSignatureSpan">rabbit.js.PULL.prototype.</span>_read
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rabbit.js.PULL.prototype.close">
+            function <span class="apidocSignatureSpan">rabbit.js.PULL.prototype.</span>close
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rabbit.js.PULL.prototype.connect">
+            function <span class="apidocSignatureSpan">rabbit.js.PULL.prototype.</span>connect
+            <span class="apidocSignatureSpan">(source, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rabbit.js.PULL.prototype.setsockopt">
+            function <span class="apidocSignatureSpan">rabbit.js.PULL.prototype.</span>setsockopt
+            <span class="apidocSignatureSpan">(opt, value)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.rabbit.js.PULL.prototype._read">module rabbit.js.PULL.prototype._read</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rabbit.js.PULL.prototype._read._read">
+            function <span class="apidocSignatureSpan">rabbit.js.PULL.prototype.</span>_read
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.rabbit.js.PULL.prototype.connect">module rabbit.js.PULL.prototype.connect</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rabbit.js.PULL.prototype.connect.connect">
+            function <span class="apidocSignatureSpan">rabbit.js.PULL.prototype.</span>connect
+            <span class="apidocSignatureSpan">(source, callback)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.rabbit.js.PUSH">module rabbit.js.PUSH</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rabbit.js.PUSH.PUSH">
+            function <span class="apidocSignatureSpan">rabbit.js.</span>PUSH
+            <span class="apidocSignatureSpan">(channel, opts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rabbit.js.PUSH.super_">
+            function <span class="apidocSignatureSpan">rabbit.js.PUSH.</span>super_
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.rabbit.js.PUSH.prototype">module rabbit.js.PUSH.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rabbit.js.PUSH.prototype.close">
+            function <span class="apidocSignatureSpan">rabbit.js.PUSH.prototype.</span>close
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rabbit.js.PUSH.prototype.connect">
+            function <span class="apidocSignatureSpan">rabbit.js.PUSH.prototype.</span>connect
+            <span class="apidocSignatureSpan">(destination, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rabbit.js.PUSH.prototype.end">
+            function <span class="apidocSignatureSpan">rabbit.js.PUSH.prototype.</span>end
+            <span class="apidocSignatureSpan">(chunk, encoding)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rabbit.js.PUSH.prototype.setsockopt">
+            function <span class="apidocSignatureSpan">rabbit.js.PUSH.prototype.</span>setsockopt
+            <span class="apidocSignatureSpan">(opt, value)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rabbit.js.PUSH.prototype.write">
+            function <span class="apidocSignatureSpan">rabbit.js.PUSH.prototype.</span>write
+            <span class="apidocSignatureSpan">(chunk, encoding)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.rabbit.js.PUSH.prototype.connect">module rabbit.js.PUSH.prototype.connect</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rabbit.js.PUSH.prototype.connect.connect">
+            function <span class="apidocSignatureSpan">rabbit.js.PUSH.prototype.</span>connect
+            <span class="apidocSignatureSpan">(destination, callback)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.rabbit.js.PUSH.prototype.write">module rabbit.js.PUSH.prototype.write</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rabbit.js.PUSH.prototype.write.write">
+            function <span class="apidocSignatureSpan">rabbit.js.PUSH.prototype.</span>write
+            <span class="apidocSignatureSpan">(chunk, encoding)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.rabbit.js.REP">module rabbit.js.REP</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rabbit.js.REP.REP">
+            function <span class="apidocSignatureSpan">rabbit.js.</span>REP
+            <span class="apidocSignatureSpan">(channel, opts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rabbit.js.REP.super_">
+            function <span class="apidocSignatureSpan">rabbit.js.REP.</span>super_
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.rabbit.js.REP.prototype">module rabbit.js.REP.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rabbit.js.REP.prototype._read">
+            function <span class="apidocSignatureSpan">rabbit.js.REP.prototype.</span>_read
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rabbit.js.REP.prototype.close">
+            function <span class="apidocSignatureSpan">rabbit.js.REP.prototype.</span>close
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rabbit.js.REP.prototype.connect">
+            function <span class="apidocSignatureSpan">rabbit.js.REP.prototype.</span>connect
+            <span class="apidocSignatureSpan">(source, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rabbit.js.REP.prototype.discard">
+            function <span class="apidocSignatureSpan">rabbit.js.REP.prototype.</span>discard
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rabbit.js.REP.prototype.end">
+            function <span class="apidocSignatureSpan">rabbit.js.REP.prototype.</span>end
+            <span class="apidocSignatureSpan">(chunk, encoding)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rabbit.js.REP.prototype.requeue">
+            function <span class="apidocSignatureSpan">rabbit.js.REP.prototype.</span>requeue
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rabbit.js.REP.prototype.setsockopt">
+            function <span class="apidocSignatureSpan">rabbit.js.REP.prototype.</span>setsockopt
+            <span class="apidocSignatureSpan">(opt, value)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rabbit.js.REP.prototype.write">
+            function <span class="apidocSignatureSpan">rabbit.js.REP.prototype.</span>write
+            <span class="apidocSignatureSpan">(chunk, encoding)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.rabbit.js.REP.prototype.connect">module rabbit.js.REP.prototype.connect</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rabbit.js.REP.prototype.connect.connect">
+            function <span class="apidocSignatureSpan">rabbit.js.REP.prototype.</span>connect
+            <span class="apidocSignatureSpan">(source, callback)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.rabbit.js.REP.prototype.discard">module rabbit.js.REP.prototype.discard</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rabbit.js.REP.prototype.discard.discard">
+            function <span class="apidocSignatureSpan">rabbit.js.REP.prototype.</span>discard
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.rabbit.js.REP.prototype.requeue">module rabbit.js.REP.prototype.requeue</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rabbit.js.REP.prototype.requeue.requeue">
+            function <span class="apidocSignatureSpan">rabbit.js.REP.prototype.</span>requeue
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.rabbit.js.REP.prototype.write">module rabbit.js.REP.prototype.write</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rabbit.js.REP.prototype.write.write">
+            function <span class="apidocSignatureSpan">rabbit.js.REP.prototype.</span>write
+            <span class="apidocSignatureSpan">(chunk, encoding)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.rabbit.js.REQ">module rabbit.js.REQ</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rabbit.js.REQ.REQ">
+            function <span class="apidocSignatureSpan">rabbit.js.</span>REQ
+            <span class="apidocSignatureSpan">(channel, opts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rabbit.js.REQ.super_">
+            function <span class="apidocSignatureSpan">rabbit.js.REQ.</span>super_
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.rabbit.js.REQ.prototype">module rabbit.js.REQ.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rabbit.js.REQ.prototype._read">
+            function <span class="apidocSignatureSpan">rabbit.js.REQ.prototype.</span>_read
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rabbit.js.REQ.prototype.close">
+            function <span class="apidocSignatureSpan">rabbit.js.REQ.prototype.</span>close
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rabbit.js.REQ.prototype.connect">
+            function <span class="apidocSignatureSpan">rabbit.js.REQ.prototype.</span>connect
+            <span class="apidocSignatureSpan">(destination, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rabbit.js.REQ.prototype.end">
+            function <span class="apidocSignatureSpan">rabbit.js.REQ.prototype.</span>end
+            <span class="apidocSignatureSpan">(chunk, encoding)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rabbit.js.REQ.prototype.handleReply">
+            function <span class="apidocSignatureSpan">rabbit.js.REQ.prototype.</span>handleReply
+            <span class="apidocSignatureSpan">(msg)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rabbit.js.REQ.prototype.setsockopt">
+            function <span class="apidocSignatureSpan">rabbit.js.REQ.prototype.</span>setsockopt
+            <span class="apidocSignatureSpan">(opt, value)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rabbit.js.REQ.prototype.write">
+            function <span class="apidocSignatureSpan">rabbit.js.REQ.prototype.</span>write
+            <span class="apidocSignatureSpan">(chunk, encoding)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.rabbit.js.REQ.prototype.connect">module rabbit.js.REQ.prototype.connect</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rabbit.js.REQ.prototype.connect.connect">
+            function <span class="apidocSignatureSpan">rabbit.js.REQ.prototype.</span>connect
+            <span class="apidocSignatureSpan">(destination, callback)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.rabbit.js.REQ.prototype.handleReply">module rabbit.js.REQ.prototype.handleReply</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rabbit.js.REQ.prototype.handleReply.handleReply">
+            function <span class="apidocSignatureSpan">rabbit.js.REQ.prototype.</span>handleReply
+            <span class="apidocSignatureSpan">(msg)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.rabbit.js.REQ.prototype.write">module rabbit.js.REQ.prototype.write</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rabbit.js.REQ.prototype.write.write">
+            function <span class="apidocSignatureSpan">rabbit.js.REQ.prototype.</span>write
+            <span class="apidocSignatureSpan">(chunk, encoding)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.rabbit.js.SUB">module rabbit.js.SUB</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rabbit.js.SUB.SUB">
+            function <span class="apidocSignatureSpan">rabbit.js.</span>SUB
+            <span class="apidocSignatureSpan">(channel, opts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rabbit.js.SUB.super_">
+            function <span class="apidocSignatureSpan">rabbit.js.SUB.</span>super_
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.rabbit.js.SUB.prototype">module rabbit.js.SUB.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rabbit.js.SUB.prototype._read">
+            function <span class="apidocSignatureSpan">rabbit.js.SUB.prototype.</span>_read
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rabbit.js.SUB.prototype.close">
+            function <span class="apidocSignatureSpan">rabbit.js.SUB.prototype.</span>close
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rabbit.js.SUB.prototype.connect">
+            function <span class="apidocSignatureSpan">rabbit.js.SUB.prototype.</span>connect
+            <span class="apidocSignatureSpan">(source, topic, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rabbit.js.SUB.prototype.setsockopt">
+            function <span class="apidocSignatureSpan">rabbit.js.SUB.prototype.</span>setsockopt
+            <span class="apidocSignatureSpan">(opt, value)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.rabbit.js.SUB.prototype.connect">module rabbit.js.SUB.prototype.connect</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rabbit.js.SUB.prototype.connect.connect">
+            function <span class="apidocSignatureSpan">rabbit.js.SUB.prototype.</span>connect
+            <span class="apidocSignatureSpan">(source, topic, callback)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.rabbit.js.TASK">module rabbit.js.TASK</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rabbit.js.TASK.TASK">
+            function <span class="apidocSignatureSpan">rabbit.js.</span>TASK
+            <span class="apidocSignatureSpan">(channel, opts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rabbit.js.TASK.super_">
+            function <span class="apidocSignatureSpan">rabbit.js.TASK.</span>super_
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.rabbit.js.TASK.prototype">module rabbit.js.TASK.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rabbit.js.TASK.prototype.close">
+            function <span class="apidocSignatureSpan">rabbit.js.TASK.prototype.</span>close
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rabbit.js.TASK.prototype.connect">
+            function <span class="apidocSignatureSpan">rabbit.js.TASK.prototype.</span>connect
+            <span class="apidocSignatureSpan">(destination, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rabbit.js.TASK.prototype.end">
+            function <span class="apidocSignatureSpan">rabbit.js.TASK.prototype.</span>end
+            <span class="apidocSignatureSpan">(chunk, encoding)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rabbit.js.TASK.prototype.post">
+            function <span class="apidocSignatureSpan">rabbit.js.TASK.prototype.</span>post
+            <span class="apidocSignatureSpan">(task, chunk, encoding)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rabbit.js.TASK.prototype.setsockopt">
+            function <span class="apidocSignatureSpan">rabbit.js.TASK.prototype.</span>setsockopt
+            <span class="apidocSignatureSpan">(opt, value)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rabbit.js.TASK.prototype.write">
+            function <span class="apidocSignatureSpan">rabbit.js.TASK.prototype.</span>write
+            <span class="apidocSignatureSpan">(chunk, encoding)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.rabbit.js.TASK.prototype.connect">module rabbit.js.TASK.prototype.connect</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rabbit.js.TASK.prototype.connect.connect">
+            function <span class="apidocSignatureSpan">rabbit.js.TASK.prototype.</span>connect
+            <span class="apidocSignatureSpan">(destination, callback)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.rabbit.js.TASK.prototype.post">module rabbit.js.TASK.prototype.post</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rabbit.js.TASK.prototype.post.post">
+            function <span class="apidocSignatureSpan">rabbit.js.TASK.prototype.</span>post
+            <span class="apidocSignatureSpan">(task, chunk, encoding)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.rabbit.js.TASK.prototype.write">module rabbit.js.TASK.prototype.write</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rabbit.js.TASK.prototype.write.write">
+            function <span class="apidocSignatureSpan">rabbit.js.TASK.prototype.</span>write
+            <span class="apidocSignatureSpan">(chunk, encoding)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.rabbit.js.WORKER">module rabbit.js.WORKER</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rabbit.js.WORKER.WORKER">
+            function <span class="apidocSignatureSpan">rabbit.js.</span>WORKER
+            <span class="apidocSignatureSpan">(channel, opts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rabbit.js.WORKER.super_">
+            function <span class="apidocSignatureSpan">rabbit.js.WORKER.</span>super_
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.rabbit.js.WORKER.prototype">module rabbit.js.WORKER.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rabbit.js.WORKER.prototype._read">
+            function <span class="apidocSignatureSpan">rabbit.js.WORKER.prototype.</span>_read
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rabbit.js.WORKER.prototype.ack">
+            function <span class="apidocSignatureSpan">rabbit.js.WORKER.prototype.</span>ack
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rabbit.js.WORKER.prototype.close">
+            function <span class="apidocSignatureSpan">rabbit.js.WORKER.prototype.</span>close
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rabbit.js.WORKER.prototype.connect">
+            function <span class="apidocSignatureSpan">rabbit.js.WORKER.prototype.</span>connect
+            <span class="apidocSignatureSpan">(source, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rabbit.js.WORKER.prototype.discard">
+            function <span class="apidocSignatureSpan">rabbit.js.WORKER.prototype.</span>discard
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rabbit.js.WORKER.prototype.requeue">
+            function <span class="apidocSignatureSpan">rabbit.js.WORKER.prototype.</span>requeue
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rabbit.js.WORKER.prototype.setsockopt">
+            function <span class="apidocSignatureSpan">rabbit.js.WORKER.prototype.</span>setsockopt
+            <span class="apidocSignatureSpan">(opt, value)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.rabbit.js.WORKER.prototype.ack">module rabbit.js.WORKER.prototype.ack</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rabbit.js.WORKER.prototype.ack.ack">
+            function <span class="apidocSignatureSpan">rabbit.js.WORKER.prototype.</span>ack
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.rabbit.js.WORKER.prototype.connect">module rabbit.js.WORKER.prototype.connect</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rabbit.js.WORKER.prototype.connect.connect">
+            function <span class="apidocSignatureSpan">rabbit.js.WORKER.prototype.</span>connect
+            <span class="apidocSignatureSpan">(source, callback)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.rabbit.js.WORKER.prototype.discard">module rabbit.js.WORKER.prototype.discard</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rabbit.js.WORKER.prototype.discard.discard">
+            function <span class="apidocSignatureSpan">rabbit.js.WORKER.prototype.</span>discard
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.rabbit.js.WORKER.prototype.requeue">module rabbit.js.WORKER.prototype.requeue</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rabbit.js.WORKER.prototype.requeue.requeue">
+            function <span class="apidocSignatureSpan">rabbit.js.WORKER.prototype.</span>requeue
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.rabbit.js.createContext">module rabbit.js.createContext</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rabbit.js.createContext.createContext">
+            function <span class="apidocSignatureSpan">rabbit.js.</span>createContext
+            <span class="apidocSignatureSpan">(url, connOpts)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.rabbit.js" id="apidoc.module.rabbit.js">module rabbit.js</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.rabbit.js.Context" id="apidoc.element.rabbit.js.Context">
+        function <span class="apidocSignatureSpan">rabbit.js.</span>Context
+        <span class="apidocSignatureSpan">(url, connOpts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Context(url, connOpts) {
+  EventEmitter.call(this);
+  var self = this;
+  var onError = errorLater(this);
+  var c = this._connection = amqp.connect(url, connOpts);
+  c.then(function(conn) {
+    conn.on('error', onError);
+    ['close', 'blocked', 'unblocked'].forEach(function(ev) {
+      conn.on(ev, self.emit.bind(self, ev));
+    });
+  });
+  c.then(this.emit.bind(this, 'ready')).then(null, onError);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+
+
+var sockets = require('./lib/sockets');
+
+module.exports = sockets;
+module.exports.createContext = function(url, connOpts) {
+  return new sockets.<span class="apidocCodeKeywordSpan">Context</span>(url, connOpts);
+}
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.rabbit.js.PUB" id="apidoc.element.rabbit.js.PUB">
+        function <span class="apidocSignatureSpan">rabbit.js.</span>PUB
+        <span class="apidocSignatureSpan">(channel, opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function PubSocket(channel, opts) {
+  Writable.call(this);
+  Socket.call(this, channel, opts);
+  this.pubs = [];
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.rabbit.js.PUBLISH" id="apidoc.element.rabbit.js.PUBLISH">
+        function <span class="apidocSignatureSpan">rabbit.js.</span>PUBLISH
+        <span class="apidocSignatureSpan">(channel, opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function PubSocket(channel, opts) {
+  Writable.call(this);
+  Socket.call(this, channel, opts);
+  this.pubs = [];
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.rabbit.js.PULL" id="apidoc.element.rabbit.js.PULL">
+        function <span class="apidocSignatureSpan">rabbit.js.</span>PULL
+        <span class="apidocSignatureSpan">(channel, opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function PullSocket(channel, opts) {
+  Readable.call(this, {objectMode: true});
+  Socket.call(this, channel, opts);
+  this.consumers = {};
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.rabbit.js.PUSH" id="apidoc.element.rabbit.js.PUSH">
+        function <span class="apidocSignatureSpan">rabbit.js.</span>PUSH
+        <span class="apidocSignatureSpan">(channel, opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function PushSocket(channel, opts) {
+  Writable.call(this);
+  Socket.call(this, channel, opts);
+  this.queues = [];
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.rabbit.js.REP" id="apidoc.element.rabbit.js.REP">
+        function <span class="apidocSignatureSpan">rabbit.js.</span>REP
+        <span class="apidocSignatureSpan">(channel, opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function RepSocket(channel, opts) {
+  Duplex.call(this, {objectMode: true});
+  Socket.call(this, channel, opts);
+  this.requests = [];
+  this.consumers = {};
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.rabbit.js.REPLY" id="apidoc.element.rabbit.js.REPLY">
+        function <span class="apidocSignatureSpan">rabbit.js.</span>REPLY
+        <span class="apidocSignatureSpan">(channel, opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function RepSocket(channel, opts) {
+  Duplex.call(this, {objectMode: true});
+  Socket.call(this, channel, opts);
+  this.requests = [];
+  this.consumers = {};
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.rabbit.js.REQ" id="apidoc.element.rabbit.js.REQ">
+        function <span class="apidocSignatureSpan">rabbit.js.</span>REQ
+        <span class="apidocSignatureSpan">(channel, opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function ReqSocket(channel, opts) {
+  Duplex.call(this, {objectMode:true});
+  this.queues = [];
+  this.awaiting = [];
+  this.replyQ = null;
+
+  var self = this;
+
+  var setup = channel.then(function(ch) {
+    return ch.assertQueue('', {exclusive:true, autoDelete:true})
+      .then(function(ok) {
+        self.replyQ = ok.queue;
+        return ch.consume(ok.queue, function(msg) {
+          if (msg !== null) {
+            self.handleReply(msg);
+            ch.ack(msg);
+          }
+          else self.push(null);
+        }, {noAck:false, exclusive: true})
+          .then(function() { return ch; });
+      });
+  });
+
+  Socket.call(this, setup, opts);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.rabbit.js.REQUEST" id="apidoc.element.rabbit.js.REQUEST">
+        function <span class="apidocSignatureSpan">rabbit.js.</span>REQUEST
+        <span class="apidocSignatureSpan">(channel, opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function ReqSocket(channel, opts) {
+  Duplex.call(this, {objectMode:true});
+  this.queues = [];
+  this.awaiting = [];
+  this.replyQ = null;
+
+  var self = this;
+
+  var setup = channel.then(function(ch) {
+    return ch.assertQueue('', {exclusive:true, autoDelete:true})
+      .then(function(ok) {
+        self.replyQ = ok.queue;
+        return ch.consume(ok.queue, function(msg) {
+          if (msg !== null) {
+            self.handleReply(msg);
+            ch.ack(msg);
+          }
+          else self.push(null);
+        }, {noAck:false, exclusive: true})
+          .then(function() { return ch; });
+      });
+  });
+
+  Socket.call(this, setup, opts);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.rabbit.js.SUB" id="apidoc.element.rabbit.js.SUB">
+        function <span class="apidocSignatureSpan">rabbit.js.</span>SUB
+        <span class="apidocSignatureSpan">(channel, opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function SubSocket(channel, opts) {
+  Readable.call(this, {objectMode: true});
+
+  this.subs = [], this.patterns = [];
+  var self = this;
+
+  var setup = channel.then(function(ch) {
+    return ch.assertQueue('', {
+      exclusive: true, autoDelete: true
+    }).then(function(ok) {
+      self.queue = ok.queue; // for inspection
+      return ch.consume(ok.queue, function(msg) {
+        // if msg is null, this indicates a cancel, i.e., end of
+        // stream. Pushing such a null tells the stream to emit 'end'.
+        self.push(msg &amp;&amp; msg.content);
+      }, {noAck:true, exclusive:true})
+        .then(function() { return ch; });
+    });
+  });
+  Socket.call(this, setup, opts);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.rabbit.js.SUBSCRIBE" id="apidoc.element.rabbit.js.SUBSCRIBE">
+        function <span class="apidocSignatureSpan">rabbit.js.</span>SUBSCRIBE
+        <span class="apidocSignatureSpan">(channel, opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function SubSocket(channel, opts) {
+  Readable.call(this, {objectMode: true});
+
+  this.subs = [], this.patterns = [];
+  var self = this;
+
+  var setup = channel.then(function(ch) {
+    return ch.assertQueue('', {
+      exclusive: true, autoDelete: true
+    }).then(function(ok) {
+      self.queue = ok.queue; // for inspection
+      return ch.consume(ok.queue, function(msg) {
+        // if msg is null, this indicates a cancel, i.e., end of
+        // stream. Pushing such a null tells the stream to emit 'end'.
+        self.push(msg &amp;&amp; msg.content);
+      }, {noAck:true, exclusive:true})
+        .then(function() { return ch; });
+    });
+  });
+  Socket.call(this, setup, opts);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.rabbit.js.TASK" id="apidoc.element.rabbit.js.TASK">
+        function <span class="apidocSignatureSpan">rabbit.js.</span>TASK
+        <span class="apidocSignatureSpan">(channel, opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function TaskSocket(channel, opts) {
+  Writable.call(this);
+  Socket.call(this, channel, opts);
+  this.queues = [];
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.rabbit.js.WORKER" id="apidoc.element.rabbit.js.WORKER">
+        function <span class="apidocSignatureSpan">rabbit.js.</span>WORKER
+        <span class="apidocSignatureSpan">(channel, opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function WorkerSocket(channel, opts) {
+  Readable.call(this, {objectMode: true});
+  Socket.call(this, channel, opts);
+  this.consumers = {};
+  this.unacked = [];
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.rabbit.js.createContext" id="apidoc.element.rabbit.js.createContext">
+        function <span class="apidocSignatureSpan">rabbit.js.</span>createContext
+        <span class="apidocSignatureSpan">(url, connOpts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">createContext = function (url, connOpts) {
+  return new sockets.Context(url, connOpts);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  $ npm install rabbit.js
+
+This library provides a simple, socket-oriented API* for messaging in
+[Node.JS](http://nodejs.org/), using
+[RabbitMQ](http://www.rabbitmq.com/) as a backend.
+
+```js
+var context = require('rabbit.js').<span class="apidocCodeKeywordSpan">createContext</span>();
+context.on('ready', function() {
+var pub = context.socket('PUB'), sub = context.socket('SUB');
+sub.pipe(process.stdout);
+sub.connect('events', function() {
+  pub.connect('events', function() {
+    pub.write(JSON.stringify({welcome: 'rabbit.js'}), 'utf8');
+  });
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.rabbit.js.js.Context" id="apidoc.element.rabbit.js.js.Context">
+        function <span class="apidocSignatureSpan">rabbit.js.</span>js.Context
+        <span class="apidocSignatureSpan">(url, connOpts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Context(url, connOpts) {
+  EventEmitter.call(this);
+  var self = this;
+  var onError = errorLater(this);
+  var c = this._connection = amqp.connect(url, connOpts);
+  c.then(function(conn) {
+    conn.on('error', onError);
+    ['close', 'blocked', 'unblocked'].forEach(function(ev) {
+      conn.on(ev, self.emit.bind(self, ev));
+    });
+  });
+  c.then(this.emit.bind(this, 'ready')).then(null, onError);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.rabbit.js.js.Context.prototype.close" id="apidoc.element.rabbit.js.js.Context.prototype.close">
+        function <span class="apidocSignatureSpan">rabbit.js.</span>js.Context.prototype.close
+        <span class="apidocSignatureSpan">(callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">js.Context.prototype.close = function (callback) {
+  this._connection.then(function(c) {
+    c.close().then(callback);
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.rabbit.js.js.Context.prototype.socket" id="apidoc.element.rabbit.js.js.Context.prototype.socket">
+        function <span class="apidocSignatureSpan">rabbit.js.</span>js.Context.prototype.socket
+        <span class="apidocSignatureSpan">(type, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">js.Context.prototype.socket = function (type, options) {
+  var Ctr = SOCKETS[type];
+  if (Ctr) {
+    var s = new Ctr(this._connection.then(function(c) {
+      return c.createChannel();
+    }), options);
+    return s;
+  }
+  else throw new Error('Undefined socket type ' + type);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.rabbit.js.js.PUB" id="apidoc.element.rabbit.js.js.PUB">
+        function <span class="apidocSignatureSpan">rabbit.js.</span>js.PUB
+        <span class="apidocSignatureSpan">(channel, opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function PubSocket(channel, opts) {
+  Writable.call(this);
+  Socket.call(this, channel, opts);
+  this.pubs = [];
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.rabbit.js.js.PUB.prototype.close" id="apidoc.element.rabbit.js.js.PUB.prototype.close">
+        function <span class="apidocSignatureSpan">rabbit.js.</span>js.PUB.prototype.close
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function close() {
+  this.ch.close();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.rabbit.js.js.PUB.prototype.connect" id="apidoc.element.rabbit.js.js.PUB.prototype.connect">
+        function <span class="apidocSignatureSpan">rabbit.js.</span>js.PUB.prototype.connect
+        <span class="apidocSignatureSpan">(destination, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">js.PUB.prototype.connect = function (destination, callback) {
+  var self = this, ch = this.ch;
+  if (this.options.noCreate) {
+    self.pubs.push(destination);
+    delay(callback);
+  }
+  else {
+    ch.assertExchange(destination,
+                      this.options.routing || 'fanout',
+                      {durable: false, autoDelete: false})
+      .then(function() {
+        self.pubs.push(destination);
+      }).then(callback);
+  };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.rabbit.js.js.PUB.prototype.end" id="apidoc.element.rabbit.js.js.PUB.prototype.end">
+        function <span class="apidocSignatureSpan">rabbit.js.</span>js.PUB.prototype.end
+        <span class="apidocSignatureSpan">(chunk, encoding)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function end(chunk, encoding) {
+  if (chunk !== undefined) this.write(chunk, encoding);
+  this.close();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.rabbit.js.js.PUB.prototype.publish" id="apidoc.element.rabbit.js.js.PUB.prototype.publish">
+        function <span class="apidocSignatureSpan">rabbit.js.</span>js.PUB.prototype.publish
+        <span class="apidocSignatureSpan">(topic, chunk, encoding)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">js.PUB.prototype.publish = function (topic, chunk, encoding) {
+  var ch = this.ch;
+  if (!topic) topic = this.options.topic || '';
+  var options = {expiration: this.options.expiration,
+                 persistent: this.options.persistent};
+  var allpubs = true;
+  this.pubs.forEach(function(dest) {
+    allpubs = allpubs &amp;&amp;
+      ch.publish(dest, topic,
+                 bufferify(chunk, encoding),
+                 options);
+  });
+  return allpubs;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.rabbit.js.js.PUB.prototype.setsockopt" id="apidoc.element.rabbit.js.js.PUB.prototype.setsockopt">
+        function <span class="apidocSignatureSpan">rabbit.js.</span>js.PUB.prototype.setsockopt
+        <span class="apidocSignatureSpan">(opt, value)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function setsockopt(opt, value) {
+  switch (opt) {
+  case 'prefetch':
+    this.ch.prefetch(value); break;
+  case 'expiration':
+  case 'persistent':
+  case 'topic':
+  case 'task':
+    this.options[opt] = value; break;
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.rabbit.js.js.PUB.prototype.write" id="apidoc.element.rabbit.js.js.PUB.prototype.write">
+        function <span class="apidocSignatureSpan">rabbit.js.</span>js.PUB.prototype.write
+        <span class="apidocSignatureSpan">(chunk, encoding)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">js.PUB.prototype.write = function (chunk, encoding) {
+  return this.publish(false, chunk, encoding);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.rabbit.js.js.PULL" id="apidoc.element.rabbit.js.js.PULL">
+        function <span class="apidocSignatureSpan">rabbit.js.</span>js.PULL
+        <span class="apidocSignatureSpan">(channel, opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function PullSocket(channel, opts) {
+  Readable.call(this, {objectMode: true});
+  Socket.call(this, channel, opts);
+  this.consumers = {};
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.rabbit.js.js.PULL.prototype._read" id="apidoc.element.rabbit.js.js.PULL.prototype._read">
+        function <span class="apidocSignatureSpan">rabbit.js.</span>js.PULL.prototype._read
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function ignore() {}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.rabbit.js.js.PULL.prototype.connect" id="apidoc.element.rabbit.js.js.PULL.prototype.connect">
+        function <span class="apidocSignatureSpan">rabbit.js.</span>js.PULL.prototype.connect
+        <span class="apidocSignatureSpan">(source, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">js.PULL.prototype.connect = function (source, callback) {
+  var self = this, ch = this.ch;
+
+  if (this.consumers[source]) {
+    if (callback) delay(callback); return;
+  }
+
+  function consume() {
+    ch.consume(source, function(msg) {
+      self.push(msg &amp;&amp; msg.content);
+      ch.ack(msg);
+    }, {noAck:false})
+      .then(function(ok) {
+        self.consumers[source] = ok.consumerTag;
+      })
+      .then(callback);
+  }
+
+  if (this.options.noCreate) {
+    consume();
+  }
+  else {
+    ch.assertQueue(source, {durable: this.options.persistent})
+      .then(consume);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.rabbit.js.js.PUSH" id="apidoc.element.rabbit.js.js.PUSH">
+        function <span class="apidocSignatureSpan">rabbit.js.</span>js.PUSH
+        <span class="apidocSignatureSpan">(channel, opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function PushSocket(channel, opts) {
+  Writable.call(this);
+  Socket.call(this, channel, opts);
+  this.queues = [];
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.rabbit.js.js.PUSH.prototype.connect" id="apidoc.element.rabbit.js.js.PUSH.prototype.connect">
+        function <span class="apidocSignatureSpan">rabbit.js.</span>js.PUSH.prototype.connect
+        <span class="apidocSignatureSpan">(destination, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">js.PUSH.prototype.connect = function (destination, callback) {
+  var self = this, ch = this.ch;
+  if (this.options.noCreate) {
+    self.queues.push(destination);
+    delay(callback);
+  }
+  else {
+    ch.assertQueue(destination, {durable: this.options.persistent})
+      .then(function(ok) {
+        self.queues.push(destination);
+      }).then(callback);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.rabbit.js.js.PUSH.prototype.write" id="apidoc.element.rabbit.js.js.PUSH.prototype.write">
+        function <span class="apidocSignatureSpan">rabbit.js.</span>js.PUSH.prototype.write
+        <span class="apidocSignatureSpan">(chunk, encoding)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">js.PUSH.prototype.write = function (chunk, encoding) {
+  var queue = this.queues.shift();
+  if (queue !== undefined) {
+    this.queues.push(queue);
+    var options = {expiration: this.options.expiration,
+                   persistent: this.options.persistent};
+    return this.ch.sendToQueue(queue,
+                               bufferify(chunk, encoding), options);
+  }
+  else return true;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.rabbit.js.js.REP" id="apidoc.element.rabbit.js.js.REP">
+        function <span class="apidocSignatureSpan">rabbit.js.</span>js.REP
+        <span class="apidocSignatureSpan">(channel, opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function RepSocket(channel, opts) {
+  Duplex.call(this, {objectMode: true});
+  Socket.call(this, channel, opts);
+  this.requests = [];
+  this.consumers = {};
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.rabbit.js.js.REP.prototype.connect" id="apidoc.element.rabbit.js.js.REP.prototype.connect">
+        function <span class="apidocSignatureSpan">rabbit.js.</span>js.REP.prototype.connect
+        <span class="apidocSignatureSpan">(source, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">js.REP.prototype.connect = function (source, callback) {
+  var self = this, ch = this.ch;
+
+  if (this.consumers[source]) {
+    delay(callback); return;
+  }
+
+  function consume() {
+    return ch.consume(source, function(msg) {
+      if (msg !== null) {
+        self.requests.push(msg);
+        self.push(msg.content);
+      }
+      else self.push(null);
+    }, {noAck:false}).then(function(ok) {
+      self.consumers[source] = ok.consumerTag;
+    }).then(callback);
+  }
+
+  if (this.options.noCreate) {
+    consume();
+  }
+  else {
+    ch.assertQueue(source, {durable: this.options.persistent})
+      .then(consume);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.rabbit.js.js.REP.prototype.discard" id="apidoc.element.rabbit.js.js.REP.prototype.discard">
+        function <span class="apidocSignatureSpan">rabbit.js.</span>js.REP.prototype.discard
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">js.REP.prototype.discard = function () {
+    var ch = this.ch, current = this.requests.shift();
+
+    if (!current)
+        throw new Error('Discard with no pending request');
+
+    ch.reject(current, false);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.rabbit.js.js.REP.prototype.requeue" id="apidoc.element.rabbit.js.js.REP.prototype.requeue">
+        function <span class="apidocSignatureSpan">rabbit.js.</span>js.REP.prototype.requeue
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">js.REP.prototype.requeue = function () {
+    var ch = this.ch, current = this.requests.shift();
+
+    if (!current)
+        throw new Error('Requeue with no pending request');
+
+    ch.reject(current);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.rabbit.js.js.REP.prototype.write" id="apidoc.element.rabbit.js.js.REP.prototype.write">
+        function <span class="apidocSignatureSpan">rabbit.js.</span>js.REP.prototype.write
+        <span class="apidocSignatureSpan">(chunk, encoding)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">js.REP.prototype.write = function (chunk, encoding) {
+  var ch = this.ch, current = this.requests.shift();
+
+  if (!current)
+    throw new Error('Write with no pending request');
+
+  var replyTo = current.properties.replyTo;
+  var cid = current.properties.correlationId;
+  // Replies are never persistent, because the queue disappears with
+  // its socket.
+  var options = {
+    deliveryMode: true,
+    expiration: this.options.expiration,
+    correlationId: cid
+  };
+  var res = ch.sendToQueue(replyTo, bufferify(chunk, encoding),
+                           options);
+  ch.ack(current);
+  return res;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.rabbit.js.js.REQ" id="apidoc.element.rabbit.js.js.REQ">
+        function <span class="apidocSignatureSpan">rabbit.js.</span>js.REQ
+        <span class="apidocSignatureSpan">(channel, opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function ReqSocket(channel, opts) {
+  Duplex.call(this, {objectMode:true});
+  this.queues = [];
+  this.awaiting = [];
+  this.replyQ = null;
+
+  var self = this;
+
+  var setup = channel.then(function(ch) {
+    return ch.assertQueue('', {exclusive:true, autoDelete:true})
+      .then(function(ok) {
+        self.replyQ = ok.queue;
+        return ch.consume(ok.queue, function(msg) {
+          if (msg !== null) {
+            self.handleReply(msg);
+            ch.ack(msg);
+          }
+          else self.push(null);
+        }, {noAck:false, exclusive: true})
+          .then(function() { return ch; });
+      });
+  });
+
+  Socket.call(this, setup, opts);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.rabbit.js.js.REQ.prototype.connect" id="apidoc.element.rabbit.js.js.REQ.prototype.connect">
+        function <span class="apidocSignatureSpan">rabbit.js.</span>js.REQ.prototype.connect
+        <span class="apidocSignatureSpan">(destination, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">js.REQ.prototype.connect = function (destination, callback) {
+  var self = this, ch = this.ch;
+
+  if (this.options.noCreate) {
+      self.queues.push(ok.queue);
+    delay(callback);
+  }
+  else {
+    ch.assertQueue(destination, {durable: this.options.persistent})
+      .then(function(ok) {
+        self.queues.push(ok.queue);
+      }).then(callback);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.rabbit.js.js.REQ.prototype.handleReply" id="apidoc.element.rabbit.js.js.REQ.prototype.handleReply">
+        function <span class="apidocSignatureSpan">rabbit.js.</span>js.REQ.prototype.handleReply
+        <span class="apidocSignatureSpan">(msg)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">js.REQ.prototype.handleReply = function (msg) {
+  var cid = msg.properties.correlationId;
+  for (var i = 0; i &lt; this.awaiting.length; i++) {
+    if (cid === this.awaiting[i].correlationId) {
+      this.awaiting[i].answer = msg.content;
+    }
+  }
+  var lwm; while (lwm = this.awaiting[0]) {
+    if (lwm.answer !== null) this.push(lwm.answer);
+    else break;
+    this.awaiting.shift();
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.rabbit.js.js.REQ.prototype.write" id="apidoc.element.rabbit.js.js.REQ.prototype.write">
+        function <span class="apidocSignatureSpan">rabbit.js.</span>js.REQ.prototype.write
+        <span class="apidocSignatureSpan">(chunk, encoding)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">js.REQ.prototype.write = function (chunk, encoding) {
+  var ch = this.ch, reply = this.replyQ;
+
+  var queue = this.queues.shift();
+  if (queue) {
+    this.queues.push(queue);
+    var corrId = guid();
+    this.awaiting.push({correlationId: corrId, answer: null});
+    var options = {replyTo: reply, deliveryMode: true,
+                   correlationId: corrId,
+                   expiration: this.options.expiration,
+                   persistent: this.options.persistent};
+    return ch.sendToQueue(queue, bufferify(chunk, encoding), options);
+  }
+  else return true;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.rabbit.js.js.SUB" id="apidoc.element.rabbit.js.js.SUB">
+        function <span class="apidocSignatureSpan">rabbit.js.</span>js.SUB
+        <span class="apidocSignatureSpan">(channel, opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function SubSocket(channel, opts) {
+  Readable.call(this, {objectMode: true});
+
+  this.subs = [], this.patterns = [];
+  var self = this;
+
+  var setup = channel.then(function(ch) {
+    return ch.assertQueue('', {
+      exclusive: true, autoDelete: true
+    }).then(function(ok) {
+      self.queue = ok.queue; // for inspection
+      return ch.consume(ok.queue, function(msg) {
+        // if msg is null, this indicates a cancel, i.e., end of
+        // stream. Pushing such a null tells the stream to emit 'end'.
+        self.push(msg &amp;&amp; msg.content);
+      }, {noAck:true, exclusive:true})
+        .then(function() { return ch; });
+    });
+  });
+  Socket.call(this, setup, opts);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.rabbit.js.js.SUB.prototype.connect" id="apidoc.element.rabbit.js.js.SUB.prototype.connect">
+        function <span class="apidocSignatureSpan">rabbit.js.</span>js.SUB.prototype.connect
+        <span class="apidocSignatureSpan">(source, topic, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">js.SUB.prototype.connect = function (source, topic, callback) {
+  // Support the general form of connect
+  if (callback === undefined &amp;&amp; typeof topic === 'function') {
+    callback = topic; topic = '';
+  } else topic = topic || '';
+
+  var ch = this.ch, queue = this.queue, self = this;
+  if (this.options.noCreate) {
+    ch.bindQueue(queue, source, topic)
+      .then(callback);
+  }
+  else {
+    ch.assertExchange(source,
+                      this.options.routing || 'fanout',
+                      {durable: false, autoDelete: false})
+      .then(function(ok) {
+        return ch.bindQueue(queue, source, topic);
+      })
+      .then(callback);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.rabbit.js.js.TASK" id="apidoc.element.rabbit.js.js.TASK">
+        function <span class="apidocSignatureSpan">rabbit.js.</span>js.TASK
+        <span class="apidocSignatureSpan">(channel, opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function TaskSocket(channel, opts) {
+  Writable.call(this);
+  Socket.call(this, channel, opts);
+  this.queues = [];
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.rabbit.js.js.TASK.prototype.connect" id="apidoc.element.rabbit.js.js.TASK.prototype.connect">
+        function <span class="apidocSignatureSpan">rabbit.js.</span>js.TASK.prototype.connect
+        <span class="apidocSignatureSpan">(destination, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">js.TASK.prototype.connect = function (destination, callback) {
+  var queues = this.queues;
+
+  if (this.options.noCreate) {
+    queues.push(destination);
+    delay(callback);
+  }
+  else {
+    this.ch.assertQueue(destination,
+                        {durable: this.options.persistent})
+      .then(function(ok) {
+        queues.push(destination);
+      }).then(callback);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.rabbit.js.js.TASK.prototype.post" id="apidoc.element.rabbit.js.js.TASK.prototype.post">
+        function <span class="apidocSignatureSpan">rabbit.js.</span>js.TASK.prototype.post
+        <span class="apidocSignatureSpan">(task, chunk, encoding)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">js.TASK.prototype.post = function (task, chunk, encoding) {
+  if (!task) task = this.options.task;
+  if (this.queues.indexOf(task) === -1)
+    throw new Error('Task "' + task + '" not connected');
+  var options = {expiration: this.options.expiration,
+                 persistent: this.options.persistent};
+  return this.ch.sendToQueue(task, bufferify(chunk, encoding),
+                             options);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.rabbit.js.js.TASK.prototype.write" id="apidoc.element.rabbit.js.js.TASK.prototype.write">
+        function <span class="apidocSignatureSpan">rabbit.js.</span>js.TASK.prototype.write
+        <span class="apidocSignatureSpan">(chunk, encoding)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">js.TASK.prototype.write = function (chunk, encoding) {
+  return this.post(false, chunk, encoding);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.rabbit.js.js.WORKER" id="apidoc.element.rabbit.js.js.WORKER">
+        function <span class="apidocSignatureSpan">rabbit.js.</span>js.WORKER
+        <span class="apidocSignatureSpan">(channel, opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function WorkerSocket(channel, opts) {
+  Readable.call(this, {objectMode: true});
+  Socket.call(this, channel, opts);
+  this.consumers = {};
+  this.unacked = [];
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.rabbit.js.js.WORKER.prototype.ack" id="apidoc.element.rabbit.js.js.WORKER.prototype.ack">
+        function <span class="apidocSignatureSpan">rabbit.js.</span>js.WORKER.prototype.ack
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">js.WORKER.prototype.ack = function () {
+  var msg = this.unacked.shift();
+  if (!msg) {
+    throw new Error("ack called with no unacknowledged messages");
+  }
+  this.ch.ack(msg);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.rabbit.js.js.WORKER.prototype.connect" id="apidoc.element.rabbit.js.js.WORKER.prototype.connect">
+        function <span class="apidocSignatureSpan">rabbit.js.</span>js.WORKER.prototype.connect
+        <span class="apidocSignatureSpan">(source, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">js.WORKER.prototype.connect = function (source, callback) {
+  var self = this, ch = this.ch;
+
+  if (this.consumers[source]) {
+    if (callback) delay(callback); return;
+  }
+
+  function consume() {
+    return ch.consume(source, function(msg) {
+      if (msg) self.unacked.push(msg);
+      self.push(msg &amp;&amp; msg.content);
+    }, {noAck:false}).then(function(ok) {
+      self.consumers[source] = ok.consumerTag;
+    }).then(callback);
+  }
+
+  if (this.options.noCreate) {
+    consume();
+  }
+  else {
+    ch.assertQueue(source, {durable: this.options.persistent})
+      .then(consume);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.rabbit.js.js.WORKER.prototype.discard" id="apidoc.element.rabbit.js.js.WORKER.prototype.discard">
+        function <span class="apidocSignatureSpan">rabbit.js.</span>js.WORKER.prototype.discard
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">js.WORKER.prototype.discard = function () {
+    var msg = this.unacked.shift();
+    if (!msg) {
+        throw new Error("discard called with no unacknowledged messages");
+    }
+
+    this.ch.reject(msg, false);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.rabbit.js.js.WORKER.prototype.requeue" id="apidoc.element.rabbit.js.js.WORKER.prototype.requeue">
+        function <span class="apidocSignatureSpan">rabbit.js.</span>js.WORKER.prototype.requeue
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">js.WORKER.prototype.requeue = function () {
+    var msg = this.unacked.shift();
+    if (!msg) {
+        throw new Error("requeue called with no unacknowledged messages");
+    }
+    this.ch.reject(msg);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.rabbit.js.js.createContext" id="apidoc.element.rabbit.js.js.createContext">
+        function <span class="apidocSignatureSpan">rabbit.js.</span>js.createContext
+        <span class="apidocSignatureSpan">(url, connOpts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">js.createContext = function (url, connOpts) {
+  return new sockets.Context(url, connOpts);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.rabbit.js.Context" id="apidoc.module.rabbit.js.Context">module rabbit.js.Context</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.rabbit.js.Context.Context" id="apidoc.element.rabbit.js.Context.Context">
+        function <span class="apidocSignatureSpan">rabbit.js.</span>Context
+        <span class="apidocSignatureSpan">(url, connOpts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Context(url, connOpts) {
+  EventEmitter.call(this);
+  var self = this;
+  var onError = errorLater(this);
+  var c = this._connection = amqp.connect(url, connOpts);
+  c.then(function(conn) {
+    conn.on('error', onError);
+    ['close', 'blocked', 'unblocked'].forEach(function(ev) {
+      conn.on(ev, self.emit.bind(self, ev));
+    });
+  });
+  c.then(this.emit.bind(this, 'ready')).then(null, onError);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+
+
+var sockets = require('./lib/sockets');
+
+module.exports = sockets;
+module.exports.createContext = function(url, connOpts) {
+  return new sockets.<span class="apidocCodeKeywordSpan">Context</span>(url, connOpts);
+}
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.rabbit.js.Context.super_" id="apidoc.element.rabbit.js.Context.super_">
+        function <span class="apidocSignatureSpan">rabbit.js.Context.</span>super_
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function EventEmitter() {
+  EventEmitter.init.call(this);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.rabbit.js.Context.prototype" id="apidoc.module.rabbit.js.Context.prototype">module rabbit.js.Context.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.rabbit.js.Context.prototype.close" id="apidoc.element.rabbit.js.Context.prototype.close">
+        function <span class="apidocSignatureSpan">rabbit.js.Context.prototype.</span>close
+        <span class="apidocSignatureSpan">(callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">close = function (callback) {
+  this._connection.then(function(c) {
+    c.close().then(callback);
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.rabbit.js.Context.prototype.socket" id="apidoc.element.rabbit.js.Context.prototype.socket">
+        function <span class="apidocSignatureSpan">rabbit.js.Context.prototype.</span>socket
+        <span class="apidocSignatureSpan">(type, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">socket = function (type, options) {
+  var Ctr = SOCKETS[type];
+  if (Ctr) {
+    var s = new Ctr(this._connection.then(function(c) {
+      return c.createChannel();
+    }), options);
+    return s;
+  }
+  else throw new Error('Undefined socket type ' + type);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+This library provides a simple, socket-oriented API* for messaging in
+[Node.JS](http://nodejs.org/), using
+[RabbitMQ](http://www.rabbitmq.com/) as a backend.
+
+```js
+var context = require('rabbit.js').createContext();
+context.on('ready', function() {
+  var pub = context.<span class="apidocCodeKeywordSpan">socket</span>('PUB'), sub = context.socket('SUB');
+  sub.pipe(process.stdout);
+  sub.connect('events', function() {
+    pub.connect('events', function() {
+      pub.write(JSON.stringify({welcome: 'rabbit.js'}), 'utf8');
+    });
+  });
+});
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.rabbit.js.Context.prototype.close" id="apidoc.module.rabbit.js.Context.prototype.close">module rabbit.js.Context.prototype.close</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.rabbit.js.Context.prototype.close.close" id="apidoc.element.rabbit.js.Context.prototype.close.close">
+        function <span class="apidocSignatureSpan">rabbit.js.Context.prototype.</span>close
+        <span class="apidocSignatureSpan">(callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">close = function (callback) {
+  this._connection.then(function(c) {
+    c.close().then(callback);
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.rabbit.js.Context.prototype.socket" id="apidoc.module.rabbit.js.Context.prototype.socket">module rabbit.js.Context.prototype.socket</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.rabbit.js.Context.prototype.socket.socket" id="apidoc.element.rabbit.js.Context.prototype.socket.socket">
+        function <span class="apidocSignatureSpan">rabbit.js.Context.prototype.</span>socket
+        <span class="apidocSignatureSpan">(type, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">socket = function (type, options) {
+  var Ctr = SOCKETS[type];
+  if (Ctr) {
+    var s = new Ctr(this._connection.then(function(c) {
+      return c.createChannel();
+    }), options);
+    return s;
+  }
+  else throw new Error('Undefined socket type ' + type);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+This library provides a simple, socket-oriented API* for messaging in
+[Node.JS](http://nodejs.org/), using
+[RabbitMQ](http://www.rabbitmq.com/) as a backend.
+
+```js
+var context = require('rabbit.js').createContext();
+context.on('ready', function() {
+  var pub = context.<span class="apidocCodeKeywordSpan">socket</span>('PUB'), sub = context.socket('SUB');
+  sub.pipe(process.stdout);
+  sub.connect('events', function() {
+    pub.connect('events', function() {
+      pub.write(JSON.stringify({welcome: 'rabbit.js'}), 'utf8');
+    });
+  });
+});
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.rabbit.js.PUB" id="apidoc.module.rabbit.js.PUB">module rabbit.js.PUB</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.rabbit.js.PUB.PUB" id="apidoc.element.rabbit.js.PUB.PUB">
+        function <span class="apidocSignatureSpan">rabbit.js.</span>PUB
+        <span class="apidocSignatureSpan">(channel, opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function PubSocket(channel, opts) {
+  Writable.call(this);
+  Socket.call(this, channel, opts);
+  this.pubs = [];
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.rabbit.js.PUB.super_" id="apidoc.element.rabbit.js.PUB.super_">
+        function <span class="apidocSignatureSpan">rabbit.js.PUB.</span>super_
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Writable(options) {
+  // Writable ctor is applied to Duplexes, too.
+  // `realHasInstance` is necessary because using plain `instanceof`
+  // would return false, as no `_writableState` property is attached.
+
+  // Trying to use the custom `instanceof` for Writable here will also break the
+  // Node.js LazyTransform implementation, which has a non-trivial getter for
+  // `_writableState` that would lead to infinite recursion.
+  if (!(realHasInstance.call(Writable, this)) &amp;&amp;
+      !(this instanceof Stream.Duplex)) {
+    return new Writable(options);
+  }
+
+  this._writableState = new WritableState(options, this);
+
+  // legacy.
+  this.writable = true;
+
+  if (options) {
+    if (typeof options.write === 'function')
+      this._write = options.write;
+
+    if (typeof options.writev === 'function')
+      this._writev = options.writev;
+  }
+
+  Stream.call(this);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.rabbit.js.PUB.prototype" id="apidoc.module.rabbit.js.PUB.prototype">module rabbit.js.PUB.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.rabbit.js.PUB.prototype.close" id="apidoc.element.rabbit.js.PUB.prototype.close">
+        function <span class="apidocSignatureSpan">rabbit.js.PUB.prototype.</span>close
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function close() {
+  this.ch.close();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.rabbit.js.PUB.prototype.connect" id="apidoc.element.rabbit.js.PUB.prototype.connect">
+        function <span class="apidocSignatureSpan">rabbit.js.PUB.prototype.</span>connect
+        <span class="apidocSignatureSpan">(destination, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">connect = function (destination, callback) {
+  var self = this, ch = this.ch;
+  if (this.options.noCreate) {
+    self.pubs.push(destination);
+    delay(callback);
+  }
+  else {
+    ch.assertExchange(destination,
+                      this.options.routing || 'fanout',
+                      {durable: false, autoDelete: false})
+      .then(function() {
+        self.pubs.push(destination);
+      }).then(callback);
+  };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+[RabbitMQ](http://www.rabbitmq.com/) as a backend.
+
+```js
+var context = require('rabbit.js').createContext();
+context.on('ready', function() {
+  var pub = context.socket('PUB'), sub = context.socket('SUB');
+  sub.pipe(process.stdout);
+  sub.<span class="apidocCodeKeywordSpan">connect</span>('events', function() {
+    pub.connect('events', function() {
+      pub.write(JSON.stringify({welcome: 'rabbit.js'}), 'utf8');
+    });
+  });
+});
+```
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.rabbit.js.PUB.prototype.end" id="apidoc.element.rabbit.js.PUB.prototype.end">
+        function <span class="apidocSignatureSpan">rabbit.js.PUB.prototype.</span>end
+        <span class="apidocSignatureSpan">(chunk, encoding)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function end(chunk, encoding) {
+  if (chunk !== undefined) this.write(chunk, encoding);
+  this.close();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.rabbit.js.PUB.prototype.publish" id="apidoc.element.rabbit.js.PUB.prototype.publish">
+        function <span class="apidocSignatureSpan">rabbit.js.PUB.prototype.</span>publish
+        <span class="apidocSignatureSpan">(topic, chunk, encoding)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">publish = function (topic, chunk, encoding) {
+  var ch = this.ch;
+  if (!topic) topic = this.options.topic || '';
+  var options = {expiration: this.options.expiration,
+                 persistent: this.options.persistent};
+  var allpubs = true;
+  this.pubs.forEach(function(dest) {
+    allpubs = allpubs &amp;&amp;
+      ch.publish(dest, topic,
+                 bufferify(chunk, encoding),
+                 options);
+  });
+  return allpubs;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.rabbit.js.PUB.prototype.setsockopt" id="apidoc.element.rabbit.js.PUB.prototype.setsockopt">
+        function <span class="apidocSignatureSpan">rabbit.js.PUB.prototype.</span>setsockopt
+        <span class="apidocSignatureSpan">(opt, value)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function setsockopt(opt, value) {
+  switch (opt) {
+  case 'prefetch':
+    this.ch.prefetch(value); break;
+  case 'expiration':
+  case 'persistent':
+  case 'topic':
+  case 'task':
+    this.options[opt] = value; break;
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.rabbit.js.PUB.prototype.write" id="apidoc.element.rabbit.js.PUB.prototype.write">
+        function <span class="apidocSignatureSpan">rabbit.js.PUB.prototype.</span>write
+        <span class="apidocSignatureSpan">(chunk, encoding)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">write = function (chunk, encoding) {
+  return this.publish(false, chunk, encoding);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+```js
+var context = require('rabbit.js').createContext();
+context.on('ready', function() {
+  var pub = context.socket('PUB'), sub = context.socket('SUB');
+  sub.pipe(process.stdout);
+  sub.connect('events', function() {
+    pub.connect('events', function() {
+      pub.<span class="apidocCodeKeywordSpan">write</span>(JSON.stringify({welcome: 'rabbit.js'}), 'utf8');
+    });
+  });
+});
+```
+
+See Github pages for [documentation of the most recent
+release][gh-pages], and the branch
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.rabbit.js.PUB.prototype.close" id="apidoc.module.rabbit.js.PUB.prototype.close">module rabbit.js.PUB.prototype.close</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.rabbit.js.PUB.prototype.close.close" id="apidoc.element.rabbit.js.PUB.prototype.close.close">
+        function <span class="apidocSignatureSpan">rabbit.js.PUB.prototype.</span>close
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function close() {
+  this.ch.close();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.rabbit.js.PUB.prototype.connect" id="apidoc.module.rabbit.js.PUB.prototype.connect">module rabbit.js.PUB.prototype.connect</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.rabbit.js.PUB.prototype.connect.connect" id="apidoc.element.rabbit.js.PUB.prototype.connect.connect">
+        function <span class="apidocSignatureSpan">rabbit.js.PUB.prototype.</span>connect
+        <span class="apidocSignatureSpan">(destination, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">connect = function (destination, callback) {
+  var self = this, ch = this.ch;
+  if (this.options.noCreate) {
+    self.pubs.push(destination);
+    delay(callback);
+  }
+  else {
+    ch.assertExchange(destination,
+                      this.options.routing || 'fanout',
+                      {durable: false, autoDelete: false})
+      .then(function() {
+        self.pubs.push(destination);
+      }).then(callback);
+  };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+[RabbitMQ](http://www.rabbitmq.com/) as a backend.
+
+```js
+var context = require('rabbit.js').createContext();
+context.on('ready', function() {
+  var pub = context.socket('PUB'), sub = context.socket('SUB');
+  sub.pipe(process.stdout);
+  sub.<span class="apidocCodeKeywordSpan">connect</span>('events', function() {
+    pub.connect('events', function() {
+      pub.write(JSON.stringify({welcome: 'rabbit.js'}), 'utf8');
+    });
+  });
+});
+```
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.rabbit.js.PUB.prototype.end" id="apidoc.module.rabbit.js.PUB.prototype.end">module rabbit.js.PUB.prototype.end</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.rabbit.js.PUB.prototype.end.end" id="apidoc.element.rabbit.js.PUB.prototype.end.end">
+        function <span class="apidocSignatureSpan">rabbit.js.PUB.prototype.</span>end
+        <span class="apidocSignatureSpan">(chunk, encoding)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function end(chunk, encoding) {
+  if (chunk !== undefined) this.write(chunk, encoding);
+  this.close();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.rabbit.js.PUB.prototype.publish" id="apidoc.module.rabbit.js.PUB.prototype.publish">module rabbit.js.PUB.prototype.publish</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.rabbit.js.PUB.prototype.publish.publish" id="apidoc.element.rabbit.js.PUB.prototype.publish.publish">
+        function <span class="apidocSignatureSpan">rabbit.js.PUB.prototype.</span>publish
+        <span class="apidocSignatureSpan">(topic, chunk, encoding)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">publish = function (topic, chunk, encoding) {
+  var ch = this.ch;
+  if (!topic) topic = this.options.topic || '';
+  var options = {expiration: this.options.expiration,
+                 persistent: this.options.persistent};
+  var allpubs = true;
+  this.pubs.forEach(function(dest) {
+    allpubs = allpubs &amp;&amp;
+      ch.publish(dest, topic,
+                 bufferify(chunk, encoding),
+                 options);
+  });
+  return allpubs;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.rabbit.js.PUB.prototype.setsockopt" id="apidoc.module.rabbit.js.PUB.prototype.setsockopt">module rabbit.js.PUB.prototype.setsockopt</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.rabbit.js.PUB.prototype.setsockopt.setsockopt" id="apidoc.element.rabbit.js.PUB.prototype.setsockopt.setsockopt">
+        function <span class="apidocSignatureSpan">rabbit.js.PUB.prototype.</span>setsockopt
+        <span class="apidocSignatureSpan">(opt, value)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function setsockopt(opt, value) {
+  switch (opt) {
+  case 'prefetch':
+    this.ch.prefetch(value); break;
+  case 'expiration':
+  case 'persistent':
+  case 'topic':
+  case 'task':
+    this.options[opt] = value; break;
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.rabbit.js.PUB.prototype.write" id="apidoc.module.rabbit.js.PUB.prototype.write">module rabbit.js.PUB.prototype.write</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.rabbit.js.PUB.prototype.write.write" id="apidoc.element.rabbit.js.PUB.prototype.write.write">
+        function <span class="apidocSignatureSpan">rabbit.js.PUB.prototype.</span>write
+        <span class="apidocSignatureSpan">(chunk, encoding)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">write = function (chunk, encoding) {
+  return this.publish(false, chunk, encoding);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+```js
+var context = require('rabbit.js').createContext();
+context.on('ready', function() {
+  var pub = context.socket('PUB'), sub = context.socket('SUB');
+  sub.pipe(process.stdout);
+  sub.connect('events', function() {
+    pub.connect('events', function() {
+      pub.<span class="apidocCodeKeywordSpan">write</span>(JSON.stringify({welcome: 'rabbit.js'}), 'utf8');
+    });
+  });
+});
+```
+
+See Github pages for [documentation of the most recent
+release][gh-pages], and the branch
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.rabbit.js.PULL" id="apidoc.module.rabbit.js.PULL">module rabbit.js.PULL</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.rabbit.js.PULL.PULL" id="apidoc.element.rabbit.js.PULL.PULL">
+        function <span class="apidocSignatureSpan">rabbit.js.</span>PULL
+        <span class="apidocSignatureSpan">(channel, opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function PullSocket(channel, opts) {
+  Readable.call(this, {objectMode: true});
+  Socket.call(this, channel, opts);
+  this.consumers = {};
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.rabbit.js.PULL.super_" id="apidoc.element.rabbit.js.PULL.super_">
+        function <span class="apidocSignatureSpan">rabbit.js.PULL.</span>super_
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Readable(options) {
+  if (!(this instanceof Readable))
+    return new Readable(options);
+
+  this._readableState = new ReadableState(options, this);
+
+  // legacy
+  this.readable = true;
+
+  if (options &amp;&amp; typeof options.read === 'function')
+    this._read = options.read;
+
+  Stream.call(this);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.rabbit.js.PULL.prototype" id="apidoc.module.rabbit.js.PULL.prototype">module rabbit.js.PULL.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.rabbit.js.PULL.prototype._read" id="apidoc.element.rabbit.js.PULL.prototype._read">
+        function <span class="apidocSignatureSpan">rabbit.js.PULL.prototype.</span>_read
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function ignore() {}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.rabbit.js.PULL.prototype.close" id="apidoc.element.rabbit.js.PULL.prototype.close">
+        function <span class="apidocSignatureSpan">rabbit.js.PULL.prototype.</span>close
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function close() {
+  this.ch.close();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.rabbit.js.PULL.prototype.connect" id="apidoc.element.rabbit.js.PULL.prototype.connect">
+        function <span class="apidocSignatureSpan">rabbit.js.PULL.prototype.</span>connect
+        <span class="apidocSignatureSpan">(source, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">connect = function (source, callback) {
+  var self = this, ch = this.ch;
+
+  if (this.consumers[source]) {
+    if (callback) delay(callback); return;
+  }
+
+  function consume() {
+    ch.consume(source, function(msg) {
+      self.push(msg &amp;&amp; msg.content);
+      ch.ack(msg);
+    }, {noAck:false})
+      .then(function(ok) {
+        self.consumers[source] = ok.consumerTag;
+      })
+      .then(callback);
+  }
+
+  if (this.options.noCreate) {
+    consume();
+  }
+  else {
+    ch.assertQueue(source, {durable: this.options.persistent})
+      .then(consume);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+[RabbitMQ](http://www.rabbitmq.com/) as a backend.
+
+```js
+var context = require('rabbit.js').createContext();
+context.on('ready', function() {
+  var pub = context.socket('PUB'), sub = context.socket('SUB');
+  sub.pipe(process.stdout);
+  sub.<span class="apidocCodeKeywordSpan">connect</span>('events', function() {
+    pub.connect('events', function() {
+      pub.write(JSON.stringify({welcome: 'rabbit.js'}), 'utf8');
+    });
+  });
+});
+```
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.rabbit.js.PULL.prototype.setsockopt" id="apidoc.element.rabbit.js.PULL.prototype.setsockopt">
+        function <span class="apidocSignatureSpan">rabbit.js.PULL.prototype.</span>setsockopt
+        <span class="apidocSignatureSpan">(opt, value)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function setsockopt(opt, value) {
+  switch (opt) {
+  case 'prefetch':
+    this.ch.prefetch(value); break;
+  case 'expiration':
+  case 'persistent':
+  case 'topic':
+  case 'task':
+    this.options[opt] = value; break;
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.rabbit.js.PULL.prototype._read" id="apidoc.module.rabbit.js.PULL.prototype._read">module rabbit.js.PULL.prototype._read</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.rabbit.js.PULL.prototype._read._read" id="apidoc.element.rabbit.js.PULL.prototype._read._read">
+        function <span class="apidocSignatureSpan">rabbit.js.PULL.prototype.</span>_read
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function ignore() {}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.rabbit.js.PULL.prototype.connect" id="apidoc.module.rabbit.js.PULL.prototype.connect">module rabbit.js.PULL.prototype.connect</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.rabbit.js.PULL.prototype.connect.connect" id="apidoc.element.rabbit.js.PULL.prototype.connect.connect">
+        function <span class="apidocSignatureSpan">rabbit.js.PULL.prototype.</span>connect
+        <span class="apidocSignatureSpan">(source, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">connect = function (source, callback) {
+  var self = this, ch = this.ch;
+
+  if (this.consumers[source]) {
+    if (callback) delay(callback); return;
+  }
+
+  function consume() {
+    ch.consume(source, function(msg) {
+      self.push(msg &amp;&amp; msg.content);
+      ch.ack(msg);
+    }, {noAck:false})
+      .then(function(ok) {
+        self.consumers[source] = ok.consumerTag;
+      })
+      .then(callback);
+  }
+
+  if (this.options.noCreate) {
+    consume();
+  }
+  else {
+    ch.assertQueue(source, {durable: this.options.persistent})
+      .then(consume);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+[RabbitMQ](http://www.rabbitmq.com/) as a backend.
+
+```js
+var context = require('rabbit.js').createContext();
+context.on('ready', function() {
+  var pub = context.socket('PUB'), sub = context.socket('SUB');
+  sub.pipe(process.stdout);
+  sub.<span class="apidocCodeKeywordSpan">connect</span>('events', function() {
+    pub.connect('events', function() {
+      pub.write(JSON.stringify({welcome: 'rabbit.js'}), 'utf8');
+    });
+  });
+});
+```
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.rabbit.js.PUSH" id="apidoc.module.rabbit.js.PUSH">module rabbit.js.PUSH</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.rabbit.js.PUSH.PUSH" id="apidoc.element.rabbit.js.PUSH.PUSH">
+        function <span class="apidocSignatureSpan">rabbit.js.</span>PUSH
+        <span class="apidocSignatureSpan">(channel, opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function PushSocket(channel, opts) {
+  Writable.call(this);
+  Socket.call(this, channel, opts);
+  this.queues = [];
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.rabbit.js.PUSH.super_" id="apidoc.element.rabbit.js.PUSH.super_">
+        function <span class="apidocSignatureSpan">rabbit.js.PUSH.</span>super_
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Writable(options) {
+  // Writable ctor is applied to Duplexes, too.
+  // `realHasInstance` is necessary because using plain `instanceof`
+  // would return false, as no `_writableState` property is attached.
+
+  // Trying to use the custom `instanceof` for Writable here will also break the
+  // Node.js LazyTransform implementation, which has a non-trivial getter for
+  // `_writableState` that would lead to infinite recursion.
+  if (!(realHasInstance.call(Writable, this)) &amp;&amp;
+      !(this instanceof Stream.Duplex)) {
+    return new Writable(options);
+  }
+
+  this._writableState = new WritableState(options, this);
+
+  // legacy.
+  this.writable = true;
+
+  if (options) {
+    if (typeof options.write === 'function')
+      this._write = options.write;
+
+    if (typeof options.writev === 'function')
+      this._writev = options.writev;
+  }
+
+  Stream.call(this);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.rabbit.js.PUSH.prototype" id="apidoc.module.rabbit.js.PUSH.prototype">module rabbit.js.PUSH.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.rabbit.js.PUSH.prototype.close" id="apidoc.element.rabbit.js.PUSH.prototype.close">
+        function <span class="apidocSignatureSpan">rabbit.js.PUSH.prototype.</span>close
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function close() {
+  this.ch.close();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.rabbit.js.PUSH.prototype.connect" id="apidoc.element.rabbit.js.PUSH.prototype.connect">
+        function <span class="apidocSignatureSpan">rabbit.js.PUSH.prototype.</span>connect
+        <span class="apidocSignatureSpan">(destination, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">connect = function (destination, callback) {
+  var self = this, ch = this.ch;
+  if (this.options.noCreate) {
+    self.queues.push(destination);
+    delay(callback);
+  }
+  else {
+    ch.assertQueue(destination, {durable: this.options.persistent})
+      .then(function(ok) {
+        self.queues.push(destination);
+      }).then(callback);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+[RabbitMQ](http://www.rabbitmq.com/) as a backend.
+
+```js
+var context = require('rabbit.js').createContext();
+context.on('ready', function() {
+  var pub = context.socket('PUB'), sub = context.socket('SUB');
+  sub.pipe(process.stdout);
+  sub.<span class="apidocCodeKeywordSpan">connect</span>('events', function() {
+    pub.connect('events', function() {
+      pub.write(JSON.stringify({welcome: 'rabbit.js'}), 'utf8');
+    });
+  });
+});
+```
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.rabbit.js.PUSH.prototype.end" id="apidoc.element.rabbit.js.PUSH.prototype.end">
+        function <span class="apidocSignatureSpan">rabbit.js.PUSH.prototype.</span>end
+        <span class="apidocSignatureSpan">(chunk, encoding)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function end(chunk, encoding) {
+  if (chunk !== undefined) this.write(chunk, encoding);
+  this.close();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.rabbit.js.PUSH.prototype.setsockopt" id="apidoc.element.rabbit.js.PUSH.prototype.setsockopt">
+        function <span class="apidocSignatureSpan">rabbit.js.PUSH.prototype.</span>setsockopt
+        <span class="apidocSignatureSpan">(opt, value)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function setsockopt(opt, value) {
+  switch (opt) {
+  case 'prefetch':
+    this.ch.prefetch(value); break;
+  case 'expiration':
+  case 'persistent':
+  case 'topic':
+  case 'task':
+    this.options[opt] = value; break;
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.rabbit.js.PUSH.prototype.write" id="apidoc.element.rabbit.js.PUSH.prototype.write">
+        function <span class="apidocSignatureSpan">rabbit.js.PUSH.prototype.</span>write
+        <span class="apidocSignatureSpan">(chunk, encoding)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">write = function (chunk, encoding) {
+  var queue = this.queues.shift();
+  if (queue !== undefined) {
+    this.queues.push(queue);
+    var options = {expiration: this.options.expiration,
+                   persistent: this.options.persistent};
+    return this.ch.sendToQueue(queue,
+                               bufferify(chunk, encoding), options);
+  }
+  else return true;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+```js
+var context = require('rabbit.js').createContext();
+context.on('ready', function() {
+  var pub = context.socket('PUB'), sub = context.socket('SUB');
+  sub.pipe(process.stdout);
+  sub.connect('events', function() {
+    pub.connect('events', function() {
+      pub.<span class="apidocCodeKeywordSpan">write</span>(JSON.stringify({welcome: 'rabbit.js'}), 'utf8');
+    });
+  });
+});
+```
+
+See Github pages for [documentation of the most recent
+release][gh-pages], and the branch
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.rabbit.js.PUSH.prototype.connect" id="apidoc.module.rabbit.js.PUSH.prototype.connect">module rabbit.js.PUSH.prototype.connect</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.rabbit.js.PUSH.prototype.connect.connect" id="apidoc.element.rabbit.js.PUSH.prototype.connect.connect">
+        function <span class="apidocSignatureSpan">rabbit.js.PUSH.prototype.</span>connect
+        <span class="apidocSignatureSpan">(destination, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">connect = function (destination, callback) {
+  var self = this, ch = this.ch;
+  if (this.options.noCreate) {
+    self.queues.push(destination);
+    delay(callback);
+  }
+  else {
+    ch.assertQueue(destination, {durable: this.options.persistent})
+      .then(function(ok) {
+        self.queues.push(destination);
+      }).then(callback);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+[RabbitMQ](http://www.rabbitmq.com/) as a backend.
+
+```js
+var context = require('rabbit.js').createContext();
+context.on('ready', function() {
+  var pub = context.socket('PUB'), sub = context.socket('SUB');
+  sub.pipe(process.stdout);
+  sub.<span class="apidocCodeKeywordSpan">connect</span>('events', function() {
+    pub.connect('events', function() {
+      pub.write(JSON.stringify({welcome: 'rabbit.js'}), 'utf8');
+    });
+  });
+});
+```
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.rabbit.js.PUSH.prototype.write" id="apidoc.module.rabbit.js.PUSH.prototype.write">module rabbit.js.PUSH.prototype.write</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.rabbit.js.PUSH.prototype.write.write" id="apidoc.element.rabbit.js.PUSH.prototype.write.write">
+        function <span class="apidocSignatureSpan">rabbit.js.PUSH.prototype.</span>write
+        <span class="apidocSignatureSpan">(chunk, encoding)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">write = function (chunk, encoding) {
+  var queue = this.queues.shift();
+  if (queue !== undefined) {
+    this.queues.push(queue);
+    var options = {expiration: this.options.expiration,
+                   persistent: this.options.persistent};
+    return this.ch.sendToQueue(queue,
+                               bufferify(chunk, encoding), options);
+  }
+  else return true;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+```js
+var context = require('rabbit.js').createContext();
+context.on('ready', function() {
+  var pub = context.socket('PUB'), sub = context.socket('SUB');
+  sub.pipe(process.stdout);
+  sub.connect('events', function() {
+    pub.connect('events', function() {
+      pub.<span class="apidocCodeKeywordSpan">write</span>(JSON.stringify({welcome: 'rabbit.js'}), 'utf8');
+    });
+  });
+});
+```
+
+See Github pages for [documentation of the most recent
+release][gh-pages], and the branch
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.rabbit.js.REP" id="apidoc.module.rabbit.js.REP">module rabbit.js.REP</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.rabbit.js.REP.REP" id="apidoc.element.rabbit.js.REP.REP">
+        function <span class="apidocSignatureSpan">rabbit.js.</span>REP
+        <span class="apidocSignatureSpan">(channel, opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function RepSocket(channel, opts) {
+  Duplex.call(this, {objectMode: true});
+  Socket.call(this, channel, opts);
+  this.requests = [];
+  this.consumers = {};
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.rabbit.js.REP.super_" id="apidoc.element.rabbit.js.REP.super_">
+        function <span class="apidocSignatureSpan">rabbit.js.REP.</span>super_
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Duplex(options) {
+  if (!(this instanceof Duplex))
+    return new Duplex(options);
+
+  Readable.call(this, options);
+  Writable.call(this, options);
+
+  if (options &amp;&amp; options.readable === false)
+    this.readable = false;
+
+  if (options &amp;&amp; options.writable === false)
+    this.writable = false;
+
+  this.allowHalfOpen = true;
+  if (options &amp;&amp; options.allowHalfOpen === false)
+    this.allowHalfOpen = false;
+
+  this.once('end', onend);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.rabbit.js.REP.prototype" id="apidoc.module.rabbit.js.REP.prototype">module rabbit.js.REP.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.rabbit.js.REP.prototype._read" id="apidoc.element.rabbit.js.REP.prototype._read">
+        function <span class="apidocSignatureSpan">rabbit.js.REP.prototype.</span>_read
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function ignore() {}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.rabbit.js.REP.prototype.close" id="apidoc.element.rabbit.js.REP.prototype.close">
+        function <span class="apidocSignatureSpan">rabbit.js.REP.prototype.</span>close
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function close() {
+  this.ch.close();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.rabbit.js.REP.prototype.connect" id="apidoc.element.rabbit.js.REP.prototype.connect">
+        function <span class="apidocSignatureSpan">rabbit.js.REP.prototype.</span>connect
+        <span class="apidocSignatureSpan">(source, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">connect = function (source, callback) {
+  var self = this, ch = this.ch;
+
+  if (this.consumers[source]) {
+    delay(callback); return;
+  }
+
+  function consume() {
+    return ch.consume(source, function(msg) {
+      if (msg !== null) {
+        self.requests.push(msg);
+        self.push(msg.content);
+      }
+      else self.push(null);
+    }, {noAck:false}).then(function(ok) {
+      self.consumers[source] = ok.consumerTag;
+    }).then(callback);
+  }
+
+  if (this.options.noCreate) {
+    consume();
+  }
+  else {
+    ch.assertQueue(source, {durable: this.options.persistent})
+      .then(consume);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+[RabbitMQ](http://www.rabbitmq.com/) as a backend.
+
+```js
+var context = require('rabbit.js').createContext();
+context.on('ready', function() {
+  var pub = context.socket('PUB'), sub = context.socket('SUB');
+  sub.pipe(process.stdout);
+  sub.<span class="apidocCodeKeywordSpan">connect</span>('events', function() {
+    pub.connect('events', function() {
+      pub.write(JSON.stringify({welcome: 'rabbit.js'}), 'utf8');
+    });
+  });
+});
+```
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.rabbit.js.REP.prototype.discard" id="apidoc.element.rabbit.js.REP.prototype.discard">
+        function <span class="apidocSignatureSpan">rabbit.js.REP.prototype.</span>discard
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">discard = function () {
+    var ch = this.ch, current = this.requests.shift();
+
+    if (!current)
+        throw new Error('Discard with no pending request');
+
+    ch.reject(current, false);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.rabbit.js.REP.prototype.end" id="apidoc.element.rabbit.js.REP.prototype.end">
+        function <span class="apidocSignatureSpan">rabbit.js.REP.prototype.</span>end
+        <span class="apidocSignatureSpan">(chunk, encoding)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function end(chunk, encoding) {
+  if (chunk !== undefined) this.write(chunk, encoding);
+  this.close();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.rabbit.js.REP.prototype.requeue" id="apidoc.element.rabbit.js.REP.prototype.requeue">
+        function <span class="apidocSignatureSpan">rabbit.js.REP.prototype.</span>requeue
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">requeue = function () {
+    var ch = this.ch, current = this.requests.shift();
+
+    if (!current)
+        throw new Error('Requeue with no pending request');
+
+    ch.reject(current);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.rabbit.js.REP.prototype.setsockopt" id="apidoc.element.rabbit.js.REP.prototype.setsockopt">
+        function <span class="apidocSignatureSpan">rabbit.js.REP.prototype.</span>setsockopt
+        <span class="apidocSignatureSpan">(opt, value)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function setsockopt(opt, value) {
+  switch (opt) {
+  case 'prefetch':
+    this.ch.prefetch(value); break;
+  case 'expiration':
+  case 'persistent':
+  case 'topic':
+  case 'task':
+    this.options[opt] = value; break;
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.rabbit.js.REP.prototype.write" id="apidoc.element.rabbit.js.REP.prototype.write">
+        function <span class="apidocSignatureSpan">rabbit.js.REP.prototype.</span>write
+        <span class="apidocSignatureSpan">(chunk, encoding)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">write = function (chunk, encoding) {
+  var ch = this.ch, current = this.requests.shift();
+
+  if (!current)
+    throw new Error('Write with no pending request');
+
+  var replyTo = current.properties.replyTo;
+  var cid = current.properties.correlationId;
+  // Replies are never persistent, because the queue disappears with
+  // its socket.
+  var options = {
+    deliveryMode: true,
+    expiration: this.options.expiration,
+    correlationId: cid
+  };
+  var res = ch.sendToQueue(replyTo, bufferify(chunk, encoding),
+                           options);
+  ch.ack(current);
+  return res;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+```js
+var context = require('rabbit.js').createContext();
+context.on('ready', function() {
+  var pub = context.socket('PUB'), sub = context.socket('SUB');
+  sub.pipe(process.stdout);
+  sub.connect('events', function() {
+    pub.connect('events', function() {
+      pub.<span class="apidocCodeKeywordSpan">write</span>(JSON.stringify({welcome: 'rabbit.js'}), 'utf8');
+    });
+  });
+});
+```
+
+See Github pages for [documentation of the most recent
+release][gh-pages], and the branch
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.rabbit.js.REP.prototype.connect" id="apidoc.module.rabbit.js.REP.prototype.connect">module rabbit.js.REP.prototype.connect</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.rabbit.js.REP.prototype.connect.connect" id="apidoc.element.rabbit.js.REP.prototype.connect.connect">
+        function <span class="apidocSignatureSpan">rabbit.js.REP.prototype.</span>connect
+        <span class="apidocSignatureSpan">(source, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">connect = function (source, callback) {
+  var self = this, ch = this.ch;
+
+  if (this.consumers[source]) {
+    delay(callback); return;
+  }
+
+  function consume() {
+    return ch.consume(source, function(msg) {
+      if (msg !== null) {
+        self.requests.push(msg);
+        self.push(msg.content);
+      }
+      else self.push(null);
+    }, {noAck:false}).then(function(ok) {
+      self.consumers[source] = ok.consumerTag;
+    }).then(callback);
+  }
+
+  if (this.options.noCreate) {
+    consume();
+  }
+  else {
+    ch.assertQueue(source, {durable: this.options.persistent})
+      .then(consume);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+[RabbitMQ](http://www.rabbitmq.com/) as a backend.
+
+```js
+var context = require('rabbit.js').createContext();
+context.on('ready', function() {
+  var pub = context.socket('PUB'), sub = context.socket('SUB');
+  sub.pipe(process.stdout);
+  sub.<span class="apidocCodeKeywordSpan">connect</span>('events', function() {
+    pub.connect('events', function() {
+      pub.write(JSON.stringify({welcome: 'rabbit.js'}), 'utf8');
+    });
+  });
+});
+```
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.rabbit.js.REP.prototype.discard" id="apidoc.module.rabbit.js.REP.prototype.discard">module rabbit.js.REP.prototype.discard</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.rabbit.js.REP.prototype.discard.discard" id="apidoc.element.rabbit.js.REP.prototype.discard.discard">
+        function <span class="apidocSignatureSpan">rabbit.js.REP.prototype.</span>discard
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">discard = function () {
+    var ch = this.ch, current = this.requests.shift();
+
+    if (!current)
+        throw new Error('Discard with no pending request');
+
+    ch.reject(current, false);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.rabbit.js.REP.prototype.requeue" id="apidoc.module.rabbit.js.REP.prototype.requeue">module rabbit.js.REP.prototype.requeue</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.rabbit.js.REP.prototype.requeue.requeue" id="apidoc.element.rabbit.js.REP.prototype.requeue.requeue">
+        function <span class="apidocSignatureSpan">rabbit.js.REP.prototype.</span>requeue
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">requeue = function () {
+    var ch = this.ch, current = this.requests.shift();
+
+    if (!current)
+        throw new Error('Requeue with no pending request');
+
+    ch.reject(current);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.rabbit.js.REP.prototype.write" id="apidoc.module.rabbit.js.REP.prototype.write">module rabbit.js.REP.prototype.write</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.rabbit.js.REP.prototype.write.write" id="apidoc.element.rabbit.js.REP.prototype.write.write">
+        function <span class="apidocSignatureSpan">rabbit.js.REP.prototype.</span>write
+        <span class="apidocSignatureSpan">(chunk, encoding)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">write = function (chunk, encoding) {
+  var ch = this.ch, current = this.requests.shift();
+
+  if (!current)
+    throw new Error('Write with no pending request');
+
+  var replyTo = current.properties.replyTo;
+  var cid = current.properties.correlationId;
+  // Replies are never persistent, because the queue disappears with
+  // its socket.
+  var options = {
+    deliveryMode: true,
+    expiration: this.options.expiration,
+    correlationId: cid
+  };
+  var res = ch.sendToQueue(replyTo, bufferify(chunk, encoding),
+                           options);
+  ch.ack(current);
+  return res;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+```js
+var context = require('rabbit.js').createContext();
+context.on('ready', function() {
+  var pub = context.socket('PUB'), sub = context.socket('SUB');
+  sub.pipe(process.stdout);
+  sub.connect('events', function() {
+    pub.connect('events', function() {
+      pub.<span class="apidocCodeKeywordSpan">write</span>(JSON.stringify({welcome: 'rabbit.js'}), 'utf8');
+    });
+  });
+});
+```
+
+See Github pages for [documentation of the most recent
+release][gh-pages], and the branch
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.rabbit.js.REQ" id="apidoc.module.rabbit.js.REQ">module rabbit.js.REQ</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.rabbit.js.REQ.REQ" id="apidoc.element.rabbit.js.REQ.REQ">
+        function <span class="apidocSignatureSpan">rabbit.js.</span>REQ
+        <span class="apidocSignatureSpan">(channel, opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function ReqSocket(channel, opts) {
+  Duplex.call(this, {objectMode:true});
+  this.queues = [];
+  this.awaiting = [];
+  this.replyQ = null;
+
+  var self = this;
+
+  var setup = channel.then(function(ch) {
+    return ch.assertQueue('', {exclusive:true, autoDelete:true})
+      .then(function(ok) {
+        self.replyQ = ok.queue;
+        return ch.consume(ok.queue, function(msg) {
+          if (msg !== null) {
+            self.handleReply(msg);
+            ch.ack(msg);
+          }
+          else self.push(null);
+        }, {noAck:false, exclusive: true})
+          .then(function() { return ch; });
+      });
+  });
+
+  Socket.call(this, setup, opts);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.rabbit.js.REQ.super_" id="apidoc.element.rabbit.js.REQ.super_">
+        function <span class="apidocSignatureSpan">rabbit.js.REQ.</span>super_
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Duplex(options) {
+  if (!(this instanceof Duplex))
+    return new Duplex(options);
+
+  Readable.call(this, options);
+  Writable.call(this, options);
+
+  if (options &amp;&amp; options.readable === false)
+    this.readable = false;
+
+  if (options &amp;&amp; options.writable === false)
+    this.writable = false;
+
+  this.allowHalfOpen = true;
+  if (options &amp;&amp; options.allowHalfOpen === false)
+    this.allowHalfOpen = false;
+
+  this.once('end', onend);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.rabbit.js.REQ.prototype" id="apidoc.module.rabbit.js.REQ.prototype">module rabbit.js.REQ.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.rabbit.js.REQ.prototype._read" id="apidoc.element.rabbit.js.REQ.prototype._read">
+        function <span class="apidocSignatureSpan">rabbit.js.REQ.prototype.</span>_read
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function ignore() {}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.rabbit.js.REQ.prototype.close" id="apidoc.element.rabbit.js.REQ.prototype.close">
+        function <span class="apidocSignatureSpan">rabbit.js.REQ.prototype.</span>close
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function close() {
+  this.ch.close();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.rabbit.js.REQ.prototype.connect" id="apidoc.element.rabbit.js.REQ.prototype.connect">
+        function <span class="apidocSignatureSpan">rabbit.js.REQ.prototype.</span>connect
+        <span class="apidocSignatureSpan">(destination, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">connect = function (destination, callback) {
+  var self = this, ch = this.ch;
+
+  if (this.options.noCreate) {
+      self.queues.push(ok.queue);
+    delay(callback);
+  }
+  else {
+    ch.assertQueue(destination, {durable: this.options.persistent})
+      .then(function(ok) {
+        self.queues.push(ok.queue);
+      }).then(callback);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+[RabbitMQ](http://www.rabbitmq.com/) as a backend.
+
+```js
+var context = require('rabbit.js').createContext();
+context.on('ready', function() {
+  var pub = context.socket('PUB'), sub = context.socket('SUB');
+  sub.pipe(process.stdout);
+  sub.<span class="apidocCodeKeywordSpan">connect</span>('events', function() {
+    pub.connect('events', function() {
+      pub.write(JSON.stringify({welcome: 'rabbit.js'}), 'utf8');
+    });
+  });
+});
+```
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.rabbit.js.REQ.prototype.end" id="apidoc.element.rabbit.js.REQ.prototype.end">
+        function <span class="apidocSignatureSpan">rabbit.js.REQ.prototype.</span>end
+        <span class="apidocSignatureSpan">(chunk, encoding)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function end(chunk, encoding) {
+  if (chunk !== undefined) this.write(chunk, encoding);
+  this.close();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.rabbit.js.REQ.prototype.handleReply" id="apidoc.element.rabbit.js.REQ.prototype.handleReply">
+        function <span class="apidocSignatureSpan">rabbit.js.REQ.prototype.</span>handleReply
+        <span class="apidocSignatureSpan">(msg)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">handleReply = function (msg) {
+  var cid = msg.properties.correlationId;
+  for (var i = 0; i &lt; this.awaiting.length; i++) {
+    if (cid === this.awaiting[i].correlationId) {
+      this.awaiting[i].answer = msg.content;
+    }
+  }
+  var lwm; while (lwm = this.awaiting[0]) {
+    if (lwm.answer !== null) this.push(lwm.answer);
+    else break;
+    this.awaiting.shift();
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.rabbit.js.REQ.prototype.setsockopt" id="apidoc.element.rabbit.js.REQ.prototype.setsockopt">
+        function <span class="apidocSignatureSpan">rabbit.js.REQ.prototype.</span>setsockopt
+        <span class="apidocSignatureSpan">(opt, value)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function setsockopt(opt, value) {
+  switch (opt) {
+  case 'prefetch':
+    this.ch.prefetch(value); break;
+  case 'expiration':
+  case 'persistent':
+  case 'topic':
+  case 'task':
+    this.options[opt] = value; break;
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.rabbit.js.REQ.prototype.write" id="apidoc.element.rabbit.js.REQ.prototype.write">
+        function <span class="apidocSignatureSpan">rabbit.js.REQ.prototype.</span>write
+        <span class="apidocSignatureSpan">(chunk, encoding)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">write = function (chunk, encoding) {
+  var ch = this.ch, reply = this.replyQ;
+
+  var queue = this.queues.shift();
+  if (queue) {
+    this.queues.push(queue);
+    var corrId = guid();
+    this.awaiting.push({correlationId: corrId, answer: null});
+    var options = {replyTo: reply, deliveryMode: true,
+                   correlationId: corrId,
+                   expiration: this.options.expiration,
+                   persistent: this.options.persistent};
+    return ch.sendToQueue(queue, bufferify(chunk, encoding), options);
+  }
+  else return true;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+```js
+var context = require('rabbit.js').createContext();
+context.on('ready', function() {
+  var pub = context.socket('PUB'), sub = context.socket('SUB');
+  sub.pipe(process.stdout);
+  sub.connect('events', function() {
+    pub.connect('events', function() {
+      pub.<span class="apidocCodeKeywordSpan">write</span>(JSON.stringify({welcome: 'rabbit.js'}), 'utf8');
+    });
+  });
+});
+```
+
+See Github pages for [documentation of the most recent
+release][gh-pages], and the branch
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.rabbit.js.REQ.prototype.connect" id="apidoc.module.rabbit.js.REQ.prototype.connect">module rabbit.js.REQ.prototype.connect</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.rabbit.js.REQ.prototype.connect.connect" id="apidoc.element.rabbit.js.REQ.prototype.connect.connect">
+        function <span class="apidocSignatureSpan">rabbit.js.REQ.prototype.</span>connect
+        <span class="apidocSignatureSpan">(destination, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">connect = function (destination, callback) {
+  var self = this, ch = this.ch;
+
+  if (this.options.noCreate) {
+      self.queues.push(ok.queue);
+    delay(callback);
+  }
+  else {
+    ch.assertQueue(destination, {durable: this.options.persistent})
+      .then(function(ok) {
+        self.queues.push(ok.queue);
+      }).then(callback);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+[RabbitMQ](http://www.rabbitmq.com/) as a backend.
+
+```js
+var context = require('rabbit.js').createContext();
+context.on('ready', function() {
+  var pub = context.socket('PUB'), sub = context.socket('SUB');
+  sub.pipe(process.stdout);
+  sub.<span class="apidocCodeKeywordSpan">connect</span>('events', function() {
+    pub.connect('events', function() {
+      pub.write(JSON.stringify({welcome: 'rabbit.js'}), 'utf8');
+    });
+  });
+});
+```
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.rabbit.js.REQ.prototype.handleReply" id="apidoc.module.rabbit.js.REQ.prototype.handleReply">module rabbit.js.REQ.prototype.handleReply</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.rabbit.js.REQ.prototype.handleReply.handleReply" id="apidoc.element.rabbit.js.REQ.prototype.handleReply.handleReply">
+        function <span class="apidocSignatureSpan">rabbit.js.REQ.prototype.</span>handleReply
+        <span class="apidocSignatureSpan">(msg)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">handleReply = function (msg) {
+  var cid = msg.properties.correlationId;
+  for (var i = 0; i &lt; this.awaiting.length; i++) {
+    if (cid === this.awaiting[i].correlationId) {
+      this.awaiting[i].answer = msg.content;
+    }
+  }
+  var lwm; while (lwm = this.awaiting[0]) {
+    if (lwm.answer !== null) this.push(lwm.answer);
+    else break;
+    this.awaiting.shift();
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.rabbit.js.REQ.prototype.write" id="apidoc.module.rabbit.js.REQ.prototype.write">module rabbit.js.REQ.prototype.write</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.rabbit.js.REQ.prototype.write.write" id="apidoc.element.rabbit.js.REQ.prototype.write.write">
+        function <span class="apidocSignatureSpan">rabbit.js.REQ.prototype.</span>write
+        <span class="apidocSignatureSpan">(chunk, encoding)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">write = function (chunk, encoding) {
+  var ch = this.ch, reply = this.replyQ;
+
+  var queue = this.queues.shift();
+  if (queue) {
+    this.queues.push(queue);
+    var corrId = guid();
+    this.awaiting.push({correlationId: corrId, answer: null});
+    var options = {replyTo: reply, deliveryMode: true,
+                   correlationId: corrId,
+                   expiration: this.options.expiration,
+                   persistent: this.options.persistent};
+    return ch.sendToQueue(queue, bufferify(chunk, encoding), options);
+  }
+  else return true;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+```js
+var context = require('rabbit.js').createContext();
+context.on('ready', function() {
+  var pub = context.socket('PUB'), sub = context.socket('SUB');
+  sub.pipe(process.stdout);
+  sub.connect('events', function() {
+    pub.connect('events', function() {
+      pub.<span class="apidocCodeKeywordSpan">write</span>(JSON.stringify({welcome: 'rabbit.js'}), 'utf8');
+    });
+  });
+});
+```
+
+See Github pages for [documentation of the most recent
+release][gh-pages], and the branch
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.rabbit.js.SUB" id="apidoc.module.rabbit.js.SUB">module rabbit.js.SUB</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.rabbit.js.SUB.SUB" id="apidoc.element.rabbit.js.SUB.SUB">
+        function <span class="apidocSignatureSpan">rabbit.js.</span>SUB
+        <span class="apidocSignatureSpan">(channel, opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function SubSocket(channel, opts) {
+  Readable.call(this, {objectMode: true});
+
+  this.subs = [], this.patterns = [];
+  var self = this;
+
+  var setup = channel.then(function(ch) {
+    return ch.assertQueue('', {
+      exclusive: true, autoDelete: true
+    }).then(function(ok) {
+      self.queue = ok.queue; // for inspection
+      return ch.consume(ok.queue, function(msg) {
+        // if msg is null, this indicates a cancel, i.e., end of
+        // stream. Pushing such a null tells the stream to emit 'end'.
+        self.push(msg &amp;&amp; msg.content);
+      }, {noAck:true, exclusive:true})
+        .then(function() { return ch; });
+    });
+  });
+  Socket.call(this, setup, opts);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.rabbit.js.SUB.super_" id="apidoc.element.rabbit.js.SUB.super_">
+        function <span class="apidocSignatureSpan">rabbit.js.SUB.</span>super_
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Readable(options) {
+  if (!(this instanceof Readable))
+    return new Readable(options);
+
+  this._readableState = new ReadableState(options, this);
+
+  // legacy
+  this.readable = true;
+
+  if (options &amp;&amp; typeof options.read === 'function')
+    this._read = options.read;
+
+  Stream.call(this);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.rabbit.js.SUB.prototype" id="apidoc.module.rabbit.js.SUB.prototype">module rabbit.js.SUB.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.rabbit.js.SUB.prototype._read" id="apidoc.element.rabbit.js.SUB.prototype._read">
+        function <span class="apidocSignatureSpan">rabbit.js.SUB.prototype.</span>_read
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function ignore() {}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.rabbit.js.SUB.prototype.close" id="apidoc.element.rabbit.js.SUB.prototype.close">
+        function <span class="apidocSignatureSpan">rabbit.js.SUB.prototype.</span>close
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function close() {
+  this.ch.close();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.rabbit.js.SUB.prototype.connect" id="apidoc.element.rabbit.js.SUB.prototype.connect">
+        function <span class="apidocSignatureSpan">rabbit.js.SUB.prototype.</span>connect
+        <span class="apidocSignatureSpan">(source, topic, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">connect = function (source, topic, callback) {
+  // Support the general form of connect
+  if (callback === undefined &amp;&amp; typeof topic === 'function') {
+    callback = topic; topic = '';
+  } else topic = topic || '';
+
+  var ch = this.ch, queue = this.queue, self = this;
+  if (this.options.noCreate) {
+    ch.bindQueue(queue, source, topic)
+      .then(callback);
+  }
+  else {
+    ch.assertExchange(source,
+                      this.options.routing || 'fanout',
+                      {durable: false, autoDelete: false})
+      .then(function(ok) {
+        return ch.bindQueue(queue, source, topic);
+      })
+      .then(callback);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+[RabbitMQ](http://www.rabbitmq.com/) as a backend.
+
+```js
+var context = require('rabbit.js').createContext();
+context.on('ready', function() {
+  var pub = context.socket('PUB'), sub = context.socket('SUB');
+  sub.pipe(process.stdout);
+  sub.<span class="apidocCodeKeywordSpan">connect</span>('events', function() {
+    pub.connect('events', function() {
+      pub.write(JSON.stringify({welcome: 'rabbit.js'}), 'utf8');
+    });
+  });
+});
+```
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.rabbit.js.SUB.prototype.setsockopt" id="apidoc.element.rabbit.js.SUB.prototype.setsockopt">
+        function <span class="apidocSignatureSpan">rabbit.js.SUB.prototype.</span>setsockopt
+        <span class="apidocSignatureSpan">(opt, value)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function setsockopt(opt, value) {
+  switch (opt) {
+  case 'prefetch':
+    this.ch.prefetch(value); break;
+  case 'expiration':
+  case 'persistent':
+  case 'topic':
+  case 'task':
+    this.options[opt] = value; break;
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.rabbit.js.SUB.prototype.connect" id="apidoc.module.rabbit.js.SUB.prototype.connect">module rabbit.js.SUB.prototype.connect</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.rabbit.js.SUB.prototype.connect.connect" id="apidoc.element.rabbit.js.SUB.prototype.connect.connect">
+        function <span class="apidocSignatureSpan">rabbit.js.SUB.prototype.</span>connect
+        <span class="apidocSignatureSpan">(source, topic, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">connect = function (source, topic, callback) {
+  // Support the general form of connect
+  if (callback === undefined &amp;&amp; typeof topic === 'function') {
+    callback = topic; topic = '';
+  } else topic = topic || '';
+
+  var ch = this.ch, queue = this.queue, self = this;
+  if (this.options.noCreate) {
+    ch.bindQueue(queue, source, topic)
+      .then(callback);
+  }
+  else {
+    ch.assertExchange(source,
+                      this.options.routing || 'fanout',
+                      {durable: false, autoDelete: false})
+      .then(function(ok) {
+        return ch.bindQueue(queue, source, topic);
+      })
+      .then(callback);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+[RabbitMQ](http://www.rabbitmq.com/) as a backend.
+
+```js
+var context = require('rabbit.js').createContext();
+context.on('ready', function() {
+  var pub = context.socket('PUB'), sub = context.socket('SUB');
+  sub.pipe(process.stdout);
+  sub.<span class="apidocCodeKeywordSpan">connect</span>('events', function() {
+    pub.connect('events', function() {
+      pub.write(JSON.stringify({welcome: 'rabbit.js'}), 'utf8');
+    });
+  });
+});
+```
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.rabbit.js.TASK" id="apidoc.module.rabbit.js.TASK">module rabbit.js.TASK</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.rabbit.js.TASK.TASK" id="apidoc.element.rabbit.js.TASK.TASK">
+        function <span class="apidocSignatureSpan">rabbit.js.</span>TASK
+        <span class="apidocSignatureSpan">(channel, opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function TaskSocket(channel, opts) {
+  Writable.call(this);
+  Socket.call(this, channel, opts);
+  this.queues = [];
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.rabbit.js.TASK.super_" id="apidoc.element.rabbit.js.TASK.super_">
+        function <span class="apidocSignatureSpan">rabbit.js.TASK.</span>super_
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Writable(options) {
+  // Writable ctor is applied to Duplexes, too.
+  // `realHasInstance` is necessary because using plain `instanceof`
+  // would return false, as no `_writableState` property is attached.
+
+  // Trying to use the custom `instanceof` for Writable here will also break the
+  // Node.js LazyTransform implementation, which has a non-trivial getter for
+  // `_writableState` that would lead to infinite recursion.
+  if (!(realHasInstance.call(Writable, this)) &amp;&amp;
+      !(this instanceof Stream.Duplex)) {
+    return new Writable(options);
+  }
+
+  this._writableState = new WritableState(options, this);
+
+  // legacy.
+  this.writable = true;
+
+  if (options) {
+    if (typeof options.write === 'function')
+      this._write = options.write;
+
+    if (typeof options.writev === 'function')
+      this._writev = options.writev;
+  }
+
+  Stream.call(this);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.rabbit.js.TASK.prototype" id="apidoc.module.rabbit.js.TASK.prototype">module rabbit.js.TASK.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.rabbit.js.TASK.prototype.close" id="apidoc.element.rabbit.js.TASK.prototype.close">
+        function <span class="apidocSignatureSpan">rabbit.js.TASK.prototype.</span>close
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function close() {
+  this.ch.close();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.rabbit.js.TASK.prototype.connect" id="apidoc.element.rabbit.js.TASK.prototype.connect">
+        function <span class="apidocSignatureSpan">rabbit.js.TASK.prototype.</span>connect
+        <span class="apidocSignatureSpan">(destination, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">connect = function (destination, callback) {
+  var queues = this.queues;
+
+  if (this.options.noCreate) {
+    queues.push(destination);
+    delay(callback);
+  }
+  else {
+    this.ch.assertQueue(destination,
+                        {durable: this.options.persistent})
+      .then(function(ok) {
+        queues.push(destination);
+      }).then(callback);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+[RabbitMQ](http://www.rabbitmq.com/) as a backend.
+
+```js
+var context = require('rabbit.js').createContext();
+context.on('ready', function() {
+  var pub = context.socket('PUB'), sub = context.socket('SUB');
+  sub.pipe(process.stdout);
+  sub.<span class="apidocCodeKeywordSpan">connect</span>('events', function() {
+    pub.connect('events', function() {
+      pub.write(JSON.stringify({welcome: 'rabbit.js'}), 'utf8');
+    });
+  });
+});
+```
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.rabbit.js.TASK.prototype.end" id="apidoc.element.rabbit.js.TASK.prototype.end">
+        function <span class="apidocSignatureSpan">rabbit.js.TASK.prototype.</span>end
+        <span class="apidocSignatureSpan">(chunk, encoding)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function end(chunk, encoding) {
+  if (chunk !== undefined) this.write(chunk, encoding);
+  this.close();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.rabbit.js.TASK.prototype.post" id="apidoc.element.rabbit.js.TASK.prototype.post">
+        function <span class="apidocSignatureSpan">rabbit.js.TASK.prototype.</span>post
+        <span class="apidocSignatureSpan">(task, chunk, encoding)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">post = function (task, chunk, encoding) {
+  if (!task) task = this.options.task;
+  if (this.queues.indexOf(task) === -1)
+    throw new Error('Task "' + task + '" not connected');
+  var options = {expiration: this.options.expiration,
+                 persistent: this.options.persistent};
+  return this.ch.sendToQueue(task, bufferify(chunk, encoding),
+                             options);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.rabbit.js.TASK.prototype.setsockopt" id="apidoc.element.rabbit.js.TASK.prototype.setsockopt">
+        function <span class="apidocSignatureSpan">rabbit.js.TASK.prototype.</span>setsockopt
+        <span class="apidocSignatureSpan">(opt, value)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function setsockopt(opt, value) {
+  switch (opt) {
+  case 'prefetch':
+    this.ch.prefetch(value); break;
+  case 'expiration':
+  case 'persistent':
+  case 'topic':
+  case 'task':
+    this.options[opt] = value; break;
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.rabbit.js.TASK.prototype.write" id="apidoc.element.rabbit.js.TASK.prototype.write">
+        function <span class="apidocSignatureSpan">rabbit.js.TASK.prototype.</span>write
+        <span class="apidocSignatureSpan">(chunk, encoding)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">write = function (chunk, encoding) {
+  return this.post(false, chunk, encoding);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+```js
+var context = require('rabbit.js').createContext();
+context.on('ready', function() {
+  var pub = context.socket('PUB'), sub = context.socket('SUB');
+  sub.pipe(process.stdout);
+  sub.connect('events', function() {
+    pub.connect('events', function() {
+      pub.<span class="apidocCodeKeywordSpan">write</span>(JSON.stringify({welcome: 'rabbit.js'}), 'utf8');
+    });
+  });
+});
+```
+
+See Github pages for [documentation of the most recent
+release][gh-pages], and the branch
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.rabbit.js.TASK.prototype.connect" id="apidoc.module.rabbit.js.TASK.prototype.connect">module rabbit.js.TASK.prototype.connect</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.rabbit.js.TASK.prototype.connect.connect" id="apidoc.element.rabbit.js.TASK.prototype.connect.connect">
+        function <span class="apidocSignatureSpan">rabbit.js.TASK.prototype.</span>connect
+        <span class="apidocSignatureSpan">(destination, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">connect = function (destination, callback) {
+  var queues = this.queues;
+
+  if (this.options.noCreate) {
+    queues.push(destination);
+    delay(callback);
+  }
+  else {
+    this.ch.assertQueue(destination,
+                        {durable: this.options.persistent})
+      .then(function(ok) {
+        queues.push(destination);
+      }).then(callback);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+[RabbitMQ](http://www.rabbitmq.com/) as a backend.
+
+```js
+var context = require('rabbit.js').createContext();
+context.on('ready', function() {
+  var pub = context.socket('PUB'), sub = context.socket('SUB');
+  sub.pipe(process.stdout);
+  sub.<span class="apidocCodeKeywordSpan">connect</span>('events', function() {
+    pub.connect('events', function() {
+      pub.write(JSON.stringify({welcome: 'rabbit.js'}), 'utf8');
+    });
+  });
+});
+```
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.rabbit.js.TASK.prototype.post" id="apidoc.module.rabbit.js.TASK.prototype.post">module rabbit.js.TASK.prototype.post</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.rabbit.js.TASK.prototype.post.post" id="apidoc.element.rabbit.js.TASK.prototype.post.post">
+        function <span class="apidocSignatureSpan">rabbit.js.TASK.prototype.</span>post
+        <span class="apidocSignatureSpan">(task, chunk, encoding)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">post = function (task, chunk, encoding) {
+  if (!task) task = this.options.task;
+  if (this.queues.indexOf(task) === -1)
+    throw new Error('Task "' + task + '" not connected');
+  var options = {expiration: this.options.expiration,
+                 persistent: this.options.persistent};
+  return this.ch.sendToQueue(task, bufferify(chunk, encoding),
+                             options);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.rabbit.js.TASK.prototype.write" id="apidoc.module.rabbit.js.TASK.prototype.write">module rabbit.js.TASK.prototype.write</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.rabbit.js.TASK.prototype.write.write" id="apidoc.element.rabbit.js.TASK.prototype.write.write">
+        function <span class="apidocSignatureSpan">rabbit.js.TASK.prototype.</span>write
+        <span class="apidocSignatureSpan">(chunk, encoding)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">write = function (chunk, encoding) {
+  return this.post(false, chunk, encoding);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+```js
+var context = require('rabbit.js').createContext();
+context.on('ready', function() {
+  var pub = context.socket('PUB'), sub = context.socket('SUB');
+  sub.pipe(process.stdout);
+  sub.connect('events', function() {
+    pub.connect('events', function() {
+      pub.<span class="apidocCodeKeywordSpan">write</span>(JSON.stringify({welcome: 'rabbit.js'}), 'utf8');
+    });
+  });
+});
+```
+
+See Github pages for [documentation of the most recent
+release][gh-pages], and the branch
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.rabbit.js.WORKER" id="apidoc.module.rabbit.js.WORKER">module rabbit.js.WORKER</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.rabbit.js.WORKER.WORKER" id="apidoc.element.rabbit.js.WORKER.WORKER">
+        function <span class="apidocSignatureSpan">rabbit.js.</span>WORKER
+        <span class="apidocSignatureSpan">(channel, opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function WorkerSocket(channel, opts) {
+  Readable.call(this, {objectMode: true});
+  Socket.call(this, channel, opts);
+  this.consumers = {};
+  this.unacked = [];
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.rabbit.js.WORKER.super_" id="apidoc.element.rabbit.js.WORKER.super_">
+        function <span class="apidocSignatureSpan">rabbit.js.WORKER.</span>super_
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Readable(options) {
+  if (!(this instanceof Readable))
+    return new Readable(options);
+
+  this._readableState = new ReadableState(options, this);
+
+  // legacy
+  this.readable = true;
+
+  if (options &amp;&amp; typeof options.read === 'function')
+    this._read = options.read;
+
+  Stream.call(this);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.rabbit.js.WORKER.prototype" id="apidoc.module.rabbit.js.WORKER.prototype">module rabbit.js.WORKER.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.rabbit.js.WORKER.prototype._read" id="apidoc.element.rabbit.js.WORKER.prototype._read">
+        function <span class="apidocSignatureSpan">rabbit.js.WORKER.prototype.</span>_read
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function ignore() {}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.rabbit.js.WORKER.prototype.ack" id="apidoc.element.rabbit.js.WORKER.prototype.ack">
+        function <span class="apidocSignatureSpan">rabbit.js.WORKER.prototype.</span>ack
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">ack = function () {
+  var msg = this.unacked.shift();
+  if (!msg) {
+    throw new Error("ack called with no unacknowledged messages");
+  }
+  this.ch.ack(msg);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.rabbit.js.WORKER.prototype.close" id="apidoc.element.rabbit.js.WORKER.prototype.close">
+        function <span class="apidocSignatureSpan">rabbit.js.WORKER.prototype.</span>close
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function close() {
+  this.ch.close();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.rabbit.js.WORKER.prototype.connect" id="apidoc.element.rabbit.js.WORKER.prototype.connect">
+        function <span class="apidocSignatureSpan">rabbit.js.WORKER.prototype.</span>connect
+        <span class="apidocSignatureSpan">(source, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">connect = function (source, callback) {
+  var self = this, ch = this.ch;
+
+  if (this.consumers[source]) {
+    if (callback) delay(callback); return;
+  }
+
+  function consume() {
+    return ch.consume(source, function(msg) {
+      if (msg) self.unacked.push(msg);
+      self.push(msg &amp;&amp; msg.content);
+    }, {noAck:false}).then(function(ok) {
+      self.consumers[source] = ok.consumerTag;
+    }).then(callback);
+  }
+
+  if (this.options.noCreate) {
+    consume();
+  }
+  else {
+    ch.assertQueue(source, {durable: this.options.persistent})
+      .then(consume);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+[RabbitMQ](http://www.rabbitmq.com/) as a backend.
+
+```js
+var context = require('rabbit.js').createContext();
+context.on('ready', function() {
+  var pub = context.socket('PUB'), sub = context.socket('SUB');
+  sub.pipe(process.stdout);
+  sub.<span class="apidocCodeKeywordSpan">connect</span>('events', function() {
+    pub.connect('events', function() {
+      pub.write(JSON.stringify({welcome: 'rabbit.js'}), 'utf8');
+    });
+  });
+});
+```
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.rabbit.js.WORKER.prototype.discard" id="apidoc.element.rabbit.js.WORKER.prototype.discard">
+        function <span class="apidocSignatureSpan">rabbit.js.WORKER.prototype.</span>discard
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">discard = function () {
+    var msg = this.unacked.shift();
+    if (!msg) {
+        throw new Error("discard called with no unacknowledged messages");
+    }
+
+    this.ch.reject(msg, false);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.rabbit.js.WORKER.prototype.requeue" id="apidoc.element.rabbit.js.WORKER.prototype.requeue">
+        function <span class="apidocSignatureSpan">rabbit.js.WORKER.prototype.</span>requeue
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">requeue = function () {
+    var msg = this.unacked.shift();
+    if (!msg) {
+        throw new Error("requeue called with no unacknowledged messages");
+    }
+    this.ch.reject(msg);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.rabbit.js.WORKER.prototype.setsockopt" id="apidoc.element.rabbit.js.WORKER.prototype.setsockopt">
+        function <span class="apidocSignatureSpan">rabbit.js.WORKER.prototype.</span>setsockopt
+        <span class="apidocSignatureSpan">(opt, value)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function setsockopt(opt, value) {
+  switch (opt) {
+  case 'prefetch':
+    this.ch.prefetch(value); break;
+  case 'expiration':
+  case 'persistent':
+  case 'topic':
+  case 'task':
+    this.options[opt] = value; break;
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.rabbit.js.WORKER.prototype.ack" id="apidoc.module.rabbit.js.WORKER.prototype.ack">module rabbit.js.WORKER.prototype.ack</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.rabbit.js.WORKER.prototype.ack.ack" id="apidoc.element.rabbit.js.WORKER.prototype.ack.ack">
+        function <span class="apidocSignatureSpan">rabbit.js.WORKER.prototype.</span>ack
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">ack = function () {
+  var msg = this.unacked.shift();
+  if (!msg) {
+    throw new Error("ack called with no unacknowledged messages");
+  }
+  this.ch.ack(msg);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.rabbit.js.WORKER.prototype.connect" id="apidoc.module.rabbit.js.WORKER.prototype.connect">module rabbit.js.WORKER.prototype.connect</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.rabbit.js.WORKER.prototype.connect.connect" id="apidoc.element.rabbit.js.WORKER.prototype.connect.connect">
+        function <span class="apidocSignatureSpan">rabbit.js.WORKER.prototype.</span>connect
+        <span class="apidocSignatureSpan">(source, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">connect = function (source, callback) {
+  var self = this, ch = this.ch;
+
+  if (this.consumers[source]) {
+    if (callback) delay(callback); return;
+  }
+
+  function consume() {
+    return ch.consume(source, function(msg) {
+      if (msg) self.unacked.push(msg);
+      self.push(msg &amp;&amp; msg.content);
+    }, {noAck:false}).then(function(ok) {
+      self.consumers[source] = ok.consumerTag;
+    }).then(callback);
+  }
+
+  if (this.options.noCreate) {
+    consume();
+  }
+  else {
+    ch.assertQueue(source, {durable: this.options.persistent})
+      .then(consume);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+[RabbitMQ](http://www.rabbitmq.com/) as a backend.
+
+```js
+var context = require('rabbit.js').createContext();
+context.on('ready', function() {
+  var pub = context.socket('PUB'), sub = context.socket('SUB');
+  sub.pipe(process.stdout);
+  sub.<span class="apidocCodeKeywordSpan">connect</span>('events', function() {
+    pub.connect('events', function() {
+      pub.write(JSON.stringify({welcome: 'rabbit.js'}), 'utf8');
+    });
+  });
+});
+```
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.rabbit.js.WORKER.prototype.discard" id="apidoc.module.rabbit.js.WORKER.prototype.discard">module rabbit.js.WORKER.prototype.discard</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.rabbit.js.WORKER.prototype.discard.discard" id="apidoc.element.rabbit.js.WORKER.prototype.discard.discard">
+        function <span class="apidocSignatureSpan">rabbit.js.WORKER.prototype.</span>discard
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">discard = function () {
+    var msg = this.unacked.shift();
+    if (!msg) {
+        throw new Error("discard called with no unacknowledged messages");
+    }
+
+    this.ch.reject(msg, false);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.rabbit.js.WORKER.prototype.requeue" id="apidoc.module.rabbit.js.WORKER.prototype.requeue">module rabbit.js.WORKER.prototype.requeue</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.rabbit.js.WORKER.prototype.requeue.requeue" id="apidoc.element.rabbit.js.WORKER.prototype.requeue.requeue">
+        function <span class="apidocSignatureSpan">rabbit.js.WORKER.prototype.</span>requeue
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">requeue = function () {
+    var msg = this.unacked.shift();
+    if (!msg) {
+        throw new Error("requeue called with no unacknowledged messages");
+    }
+    this.ch.reject(msg);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.rabbit.js.createContext" id="apidoc.module.rabbit.js.createContext">module rabbit.js.createContext</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.rabbit.js.createContext.createContext" id="apidoc.element.rabbit.js.createContext.createContext">
+        function <span class="apidocSignatureSpan">rabbit.js.</span>createContext
+        <span class="apidocSignatureSpan">(url, connOpts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">createContext = function (url, connOpts) {
+  return new sockets.Context(url, connOpts);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  $ npm install rabbit.js
+
+This library provides a simple, socket-oriented API* for messaging in
+[Node.JS](http://nodejs.org/), using
+[RabbitMQ](http://www.rabbitmq.com/) as a backend.
+
+```js
+var context = require('rabbit.js').<span class="apidocCodeKeywordSpan">createContext</span>();
+context.on('ready', function() {
+var pub = context.socket('PUB'), sub = context.socket('SUB');
+sub.pipe(process.stdout);
+sub.connect('events', function() {
+  pub.connect('events', function() {
+    pub.write(JSON.stringify({welcome: 'rabbit.js'}), 'utf8');
+  });
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
+</body></html>
