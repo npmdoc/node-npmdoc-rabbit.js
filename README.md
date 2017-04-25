@@ -1,4 +1,7 @@
-# api documentation for  [rabbit.js (v0.4.4)](http://github.com/squaremo/rabbit.js)  [![npm package](https://img.shields.io/npm/v/npmdoc-rabbit.js.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-rabbit.js) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-rabbit.js.svg)](https://travis-ci.org/npmdoc/node-npmdoc-rabbit.js)
+# npmdoc-rabbit.js
+
+#### basic api documentation for  [rabbit.js (v0.4.4)](http://github.com/squaremo/rabbit.js)  [![npm package](https://img.shields.io/npm/v/npmdoc-rabbit.js.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-rabbit.js) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-rabbit.js.svg)](https://travis-ci.org/npmdoc/node-npmdoc-rabbit.js)
+
 #### Easy stream-based messaging using RabbitMQ
 
 [![NPM](https://nodei.co/npm/rabbit.js.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/rabbit.js)
@@ -77,7 +80,8 @@
             },
             "pkgid": "rabbit.js@0.4.4"
         }
-    ]
+    ],
+    "bin": {}
 }
 ```
 
